@@ -1,0 +1,16 @@
+<div class="nav-tab-wraps">
+    <ul class="tabs">
+        @@if(context.sub01){
+            <li@@if(context.page === '0101'){ class="active"}><a href="/page/sub_01_01.html">달력보기</a></li>
+            <li@@if(context.page === '0102'){ class="active"}><a href="/page/sub_01_02.html">리스트보기</a></li>
+        }
+        @@if(context.find){
+            <li@@if(context.page === 'id'){ class="active"}><a href="/page/find-id.html">아이디 찾기</a></li>
+            <li@@if(context.page === 'pw'){ class="active"}><a href="/page/find-pw.html">비밀번호 찾기</a></li>
+        }
+        @@if(context.sub04){
+            <li@@if(context.page === '040301'){ class="active"}><a href="/page/sub_04_03_01.html">진행중인 이벤트</a></li>
+            <li@@if(context.page === '040302'){ class="active"}><a href="/page/sub_04_03_02.html">당첨자 발표</a></li>
+        }
+    </ul>
+</div>

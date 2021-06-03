@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            sub : true,
+            title : '지원센터',
+            subtab : 'sub04',
+            page : 'sub0403'
+        })
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="container">
+            @@include('./layout/page-tab.html', {
+                sub04 : true,
+                page : '040302'
+            })
+            <section class="sect">
+                <!-- 리스트 -->
+                @@include('./modules/board-list.html', {
+                    page : 'sub_04_03_02_view'
+                })
+                @@include('./modules/pagination.html')
+                <!-- // 리스트 -->
+            </section>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+</body>
+</html>

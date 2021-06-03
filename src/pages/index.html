@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            main : true
+        })
+        <!-- // header -->
+
+        <!-- main -->
+        <div id="main" class="container main">
+            <div class="section-wrap">
+                <!-- 검색 -->
+                <section class="section01">
+                    <div class="search-form">
+                        <form action="">
+                            <div class="search-input">
+                                <input type="text" class="form-control rounded" placeholder="지역명으로 검색" aria-label="지역 입력">
+                                <button type="button" class="btn-search"><span class="blind">지역 검색</span></button>
+                            </div>
+                        </form>
+                        <form action="">
+                            <div class="form-wrap">
+                                <div class="row">
+                                    <p class="label">라운드 날짜 및 시간 선택</p>
+                                    <div class="forms">
+                                        <div class="col">
+                                            <span class="datepicker-wrap">
+                                                <input type="text" class="form-control rounded datepicker" value="2021/05/20" aria-label="라운드 날짜">
+                                            </span>
+                                        </div>
+                                        <div class="col">
+                                            <select class="main" data-toggle="modal-select" data-dim="true">
+                                                <option value="time1">새벽(5시~7시)</option>
+                                                <option value="time2">오전(8시~9시)</option>
+                                                <option value="time3">오후A(11시~12시)</option>
+                                                <option value="time4">오후B(13시~14시)</option>
+                                                <option value="time5">야간(15시이후~)</option>
+                                                <option value="time6">시간무관</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="label">라운드 인원 및 지역 선택</p>
+                                    <div class="forms">
+                                        <div class="col">
+                                            <select class="main" data-toggle="modal-select" data-dim="true">
+                                                <option value="personnel1">2인(커플)</option>
+                                                <option value="personnel2">2인(남남)</option>
+                                                <option value="personnel3">2인(여여)</option>
+                                                <option value="personnel4">1인(남)</option>
+                                                <option value="personnel5">1인(여)</option>
+                                                <option value="personnel6">무관</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <select class="main" data-toggle="modal-select" data-dim="true">
+                                                <option value="spot1">제주시</option>
+                                                <option value="spot2">서귀포시</option>
+                                                <option value="spot3">제주서부</option>
+                                                <option value="spot4">제주동부</option>
+                                                <option value="spot5">무관</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn-submit">
+                                    <button type="submit" class="btn btn-point btn-lg"><span>검색</span></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <!-- // 검색 -->
+                <!-- banner -->
+                <section class="section02">
+                    <h2 class="title">골프팀매칭 보다 편하게!</h2>
+                    <div class="banner-lists">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="#n" class="inner" style="background-color:#54a0bd;">
+                                        <p class="eyebrow">간편매칭서비스</p>
+                                        <p class="tit">골프팀매칭</p>
+                                        <span class="go">보러가기</span>
+                                        <span class="img" aria-hidden="true"><img src="/images/img/img-banner01.png" alt=""></span>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#n" class="inner" style="background-color:#54a0bd;">
+                                        <p class="eyebrow">간편매칭서비스</p>
+                                        <p class="tit">골프팀매칭</p>
+                                        <span class="go">보러가기</span>
+                                        <span class="img" aria-hidden="true"><img src="/images/img/img-banner01.png" alt=""></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- // banner -->
+                <!-- 소식 -->
+                <section class="section03">
+                    <h2 class="title">티홀소식</h2>
+                    <ul class="news-lists">
+                        <li>
+                            <a href="" class="news-link">[공지] 티홀에서는 골프대회를 준비하고 있습니다. 제목이 길면 말줄임 처리됨.</a>
+                            <span class="date">2021. 05. 01</span>
+                        </li>
+                        <li>
+                            <a href="" class="news-link">[공지] 티홀에서는 골프대회를 준비하고 있습니다.</a>
+                            <span class="date">2021. 05. 01</span>
+                        </li>
+                        <li>
+                            <a href="" class="news-link">[공지] 티홀에서는 골프대회를 준비하고 있습니다.</a>
+                            <span class="date">2021. 05. 01</span>
+                        </li>
+                        <li>
+                            <a href="" class="news-link">[공지] 티홀에서는 골프대회를 준비하고 있습니다.</a>
+                            <span class="date">2021. 05. 01</span>
+                        </li>
+                    </ul>
+                    <a href="" class="btn-more"><span class="blind">소식 더보기</span></a>
+                </section>
+                <!-- // 소식 -->
+                <!-- banner -->
+                <section class="section04">
+                    <div class="banner-slider">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="#n" class="inner">
+                                        <img src="/images/img/img-banner02.jpg" alt="">
+                                        <div class="text">
+                                            <p class="eyebrow">간편매칭서비스</p>
+                                            <p class="tit"><span>골프팀매칭</span></p>
+                                            <p class="desc">티홀에서 제공하는 고객맞춤<br>매칭 서비스로 골프를 즐겨보세요!</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#n" class="inner">
+                                        <img src="/images/img/img-banner02.jpg" alt="">
+                                        <div class="text">
+                                            <p class="eyebrow">간편매칭서비스2</p>
+                                            <p class="tit"><span>골프팀매칭</span></p>
+                                            <p class="desc">티홀에서 제공하는 고객맞춤<br>매칭 서비스로 골프를 즐겨보세요!</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#n" class="inner">
+                                        <img src="/images/img/img-banner02.jpg" alt="">
+                                        <div class="text">
+                                            <p class="eyebrow">간편매칭서비스3</p>
+                                            <p class="tit"><span>골프팀매칭</span></p>
+                                            <p class="desc">티홀에서 제공하는 고객맞춤<br>매칭 서비스로 골프를 즐겨보세요!</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+                <!-- // banner -->
+            </div>
+        </div>
+        <!-- // main -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+    <script>
+        const bannerSlider = new Swiper('.banner-lists .swiper-container', {
+            slidesPerView: 'auto',
+            freeMode: true
+        });
+        const bannerSlider2 = new Swiper('.banner-slider .swiper-container', {
+            autoplay: {
+                delay: 4000
+            },
+            loop : true,
+            pagination: {
+                el : '.banner-slider .swiper-pagination',
+                type: 'progressbar'
+            }
+        });
+    </script>
+</body>
+</html>

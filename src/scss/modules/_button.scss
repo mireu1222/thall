@@ -1,0 +1,140 @@
+/* button */
+.btn {
+    display:inline-block;
+    padding:0 14px;
+    border:1px solid transparent;
+    border-radius:0;
+    background:transparent;
+    font-size:14px;
+    line-height:38px;
+    font-weight:400;
+    vertical-align:top;
+    cursor:pointer;
+    transition:$btn-transition;
+    white-space:nowrap;
+    text-align:center;
+    span {
+        display:inline-block;
+        vertical-align:top;
+    }
+    &.rounded {
+        border-radius:$border-radius-lg;
+    }
+    // style
+    @each $color, $value, $ratio in $colors {
+        &.btn-#{$color} {
+            background-color:$value;
+            border-color:$value;
+            @if $ratio == 'dark' {
+                color:$white;
+            } @else if $ratio == 'bright' {
+                color:$basic;
+            }
+            @include pc {
+                &:hover, 
+                &:active {
+                    @if $ratio == 'dark' {
+                        background-color:tint-color($value, 15%);
+                        border-color:tint-color($value, 15%);
+                    } @else if $ratio == 'bright' {
+                        background-color:shade-color($value, 10%);
+                        border-color:shade-color($value, 10%);
+                    }
+                }
+            }
+        }
+        &.btn-border-#{$color} {
+            border-color:$value;
+            color:$value;
+            @include pc {
+                &:hover, 
+                &:active {
+                    background-color:rgba($value, .1);
+                }
+            }
+        }
+    }
+    // size
+    @each $size, $fontsize, $lineheight, $mfontsize, $pd in $btn-sizes {
+        &.btn-#{$size} {
+            padding:0 $pd;
+            font-size:$fontsize;
+            line-height:$lineheight;
+            &.round {
+                border-radius:($lineheight + 2) / 2;
+            }
+        }
+    }
+    &.full {
+        display:block;
+        width:100%;
+    }
+    &:disabled {
+        border-color:$border;
+        background:$border;
+        color:$white;
+    }
+}
+.btn-group {
+    display:flex;
+    margin-top:25px;
+    justify-content:center;
+    > * {
+        min-width:100px;
+        margin-left:40px;
+        &:first-child {
+            margin-left:0;
+        }
+    }
+}
+
+/* text link */
+@each $color, $value, $ratio in $colors {
+    .link-#{$color} {
+        display:inline-block;
+        vertical-align:middle;
+        color:$value;
+        font-size:inherit;
+        font-weight:700;
+        transition:$btn-transition;
+        @include pc {
+            &:hover, 
+            &:active {
+                text-decoration:underline;
+                @if $ratio == 'dark' {
+                    color:tint-color($value, 15%);
+                } @else if $ratio == 'bright' {
+                    color:shade-color($value, 10%);
+                }
+            }
+        }
+    }
+}
+
+/* 더보기 */
+.btn-moreview {
+    display:block;
+    width:calc(100% + 32px);
+    margin:50px -16px 0;
+    padding:14px 16px;
+    border-top:1px solid $border;
+    text-align:center;
+    font-size:14px;
+    font-weight:500;
+    color:$cont;
+    span {
+        &::after {
+            content:' ';
+            display:inline-block;
+            vertical-align:top;
+            width:8px;
+            height:8px;
+            margin-top:3px;
+            margin-left:15px;
+            border:1px solid $cont;
+            border-top:none;
+            border-right:none;
+            transform:rotate(-45deg);
+        }
+    }
+}

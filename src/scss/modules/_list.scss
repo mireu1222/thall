@@ -1,0 +1,528 @@
+/* list */
+// 팀매칭 리스트
+.matching-list-wrap {
+    .date {
+        @include font-lg;
+        font-weight:700;
+    }
+    .filter {
+        display:flex;
+        margin-bottom:10px;
+        select {
+            flex:1;
+            margin-left:10px;
+            &:first-child {
+                margin-left:0;
+            }
+        }
+    }
+    .lists {
+        padding-top:20px;
+        &:first-child {
+            padding-top:0;
+        }
+        > li {
+            margin-top:30px;
+            &:first-child {
+                margin-top:0;
+            }
+            .inner {
+                position:relative;
+                border:1px solid $border;
+                padding:25px 16px 20px;
+                .matching-tit {
+                    padding-bottom:10px;
+                    border-bottom:1px solid $border;
+                }
+                .cont-body {
+                    margin-top:20px;
+                    padding-bottom:0;
+                    border-bottom:none;
+                }
+            }
+        }
+    }
+    .inner {
+        .best {
+            position:absolute;
+            top:-6px;
+            left:16px;
+            width:58px;
+            height:22px;
+            border-radius:0 0 $border-radius $border-radius;
+            background:$point;
+            color:$white;
+            font-size:14px;
+            line-height:22px;
+            font-weight:500;
+            text-align:center;
+            &::after {
+                content:' ';
+                position:absolute;
+                top:0;
+                right:-12px;
+                border-top:6px solid transparent;
+                border-left:6px solid #fda5a8;
+                border-right:6px solid transparent;
+            }
+        }
+        .matching-tit {
+            .tit {
+                @include font-md;
+                font-weight:500;
+                word-break:keep-all;
+                em {
+                    display:inline-block;
+                    vertical-align:top;
+                    margin-right:4px;
+                    color:$point;
+                    font-weight:700;
+                }
+            }
+            .fee {
+                margin-top:10px;
+                color:$cont;
+                font-size:14px;
+                font-weight:500;
+                line-height:1;
+                em {
+                    color:$basic;
+                }
+            }
+        }
+        .cont-body {
+            padding-bottom:20px;
+            border-bottom:1px solid $border;
+            .state {
+                display:flex;
+                align-items:center;
+                justify-content:space-between;
+                margin-bottom:15px;
+                .members {
+                    font-size:0;
+                    li {
+                        display:inline-block;
+                        vertical-align:top;
+                        margin-left:8px;
+                        &:first-child {
+                            margin-left:0;
+                        }
+                        > div {
+                            width:20px;
+                            height:20px;
+                            border:1px solid $border;
+                            border-radius:50%;
+                            &.female {
+                                background:#fb847b;
+                                border-color:#fb847b;
+                            }
+                            &.male {
+                                background:#74c3f0;
+                                border-color:#74c3f0;
+                            }
+                        }
+                    }
+                }
+                .matchings {
+                    font-size:0;
+                    .flag {
+                        display:inline-block;
+                        vertical-align:top;
+                        min-width:40px;
+                        height:24px;
+                        margin-left:4px;
+                        padding:0 4px;
+                        border-radius:$border-radius;
+                        white-space:nowrap;
+                        color:$white;
+                        text-align:center;
+                        font-size:12px;
+                        line-height:24px;
+                        font-weight:700;
+                        &:first-child {
+                            margin-left:0;
+                        }
+                        &.ing {
+                            background:#3899d6;
+                        }
+                        &.count {
+                            background:$point;
+                        }
+                        &.waiting {
+                            background:#f6c93f;
+                        }
+                    }
+                }
+            }
+            .infos {
+                position:relative;
+                margin-top:20px;
+                .tit {
+                    padding-right:30px;
+                    @include font-md;
+                    font-weight:500;
+                    word-break:keep-all;
+                }
+                .desc {
+                    margin-top:6px;
+                    color:$cont;
+                    @include font-sm;
+                    word-break:keep-all;
+                }
+                .like-chk-wrap {
+                    position:absolute;
+                    top:-3px;
+                    right:0;
+                }
+            }
+            .spot {
+                display:flex;
+                align-items:center;
+                margin-top:20px;
+                padding:12px 15px;
+                border:1px solid $border;
+                border-radius:$border-radius-lg;
+                background:$disabled;
+                span {
+                    display:block;
+                    color:$cont;
+                    @include font;
+                    font-weight:500;
+                    &::before {
+                        content:' ';
+                        display:inline-block;
+                        vertical-align:top;
+                        width:1px;
+                        height:10px;
+                        margin:5px 10px 0;
+                        background:$border;
+                    }
+                    &:first-child::before {
+                        display:none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// checkbox, radio list
+.slt-lists {
+    overflow:hidden;
+    ul {
+        margin:-10px -40px 0 0;
+        font-size:0;
+        li {
+            display:inline-block;
+            vertical-align:top;
+            width:calc((100% - 160px) / 4);
+            margin:10px 40px 0 0;
+            white-space:nowrap;
+        }
+    }
+    &.size2 {
+        ul {
+            margin-right:-18px;
+            li {
+                width:calc((100% - 36px) / 2);
+                margin-right:18px;
+            }
+        }
+    }
+    &.size3 {
+        ul li {
+            width:calc((100% - 120px) / 3);
+        }
+    }
+    &.full {
+        ul {
+            margin:0;
+            li {
+                display:block;
+                width:100%;
+                margin:10px 0 0;
+                &:first-child {
+                    margin-top:0;
+                }
+            }
+        }
+    }
+}
+
+// 이벤트 리스트
+.evt-lists {
+    margin:0 -16px;
+    > ul.lists {
+        > li {
+            margin-top:30px;
+            &:first-child {
+                margin-top:0;
+            }
+            .link {
+                display:block;
+                position:relative;
+                .thumb {
+                    display:block;
+                    margin-bottom:20px;
+                }
+                .info {
+                    padding:0 16px 20px;
+                    .flag {
+                        display:inline-block;
+                        vertical-align:top;
+                        height:20px;
+                        margin-bottom:5px;
+                        padding:0 8px;
+                        border-radius:10px;
+                        background:$point;
+                        color:$white;
+                        font-size:12px;
+                        line-height:20px;
+                    }
+                    .tit {
+                        @include font-lg;
+                        font-weight:500;
+                    }
+                    .date {
+                        margin-top:12px;
+                        color:$gray;
+                        font-size:12px;
+                    }
+                }
+                .d-day {
+                    position:absolute;
+                    top:0;
+                    right:16px;
+                    width:37px;
+                    height:37px;
+                    margin-top:-18px;
+                    border-radius:50%;
+                    background:$point;
+                    color:$white;
+                    font-size:14px;
+                    line-height:37px;
+                    text-align:center;
+                }
+            }
+        }
+    }
+}
+
+// 언론 홍보 리스트
+.promotion-lists {
+    > ul.lists {
+        > li {
+            margin-top:35px;
+            &:first-child {
+                margin-top:0;
+            }
+            .inner {
+                display:block;
+                border:1px solid $border;
+                border-radius:$border-radius-lg;
+                overflow:hidden;
+                .thumb {
+                    display:block;
+                    img {
+                        width:100%;
+                    }
+                }
+                .video-area {
+                    position:relative;
+                    width:100%;
+                    height:0;
+                    @include calcs(padding-top, 9px, 16px);
+                    overflow:hidden;
+                    iframe {
+                        position:absolute;
+                        top:0;
+                        left:0;
+                        width:100%;
+                        height:100%;
+                        border-radius:6px 6px 0 0;
+                    }
+                }
+                .info {
+                    padding:15px 16px 20px;
+                    &:only-child {
+                        padding:30px 16px;
+                        .desc {
+                            margin-top:15px;
+                        }
+                    }
+                    .tit {
+                        @include font-md;
+                        font-weight:500;
+                        word-break:keep-all;
+                    }
+                    .desc {
+                        margin-top:5px;
+                        color:$cont;
+                        @include font-sm;
+                        word-break:keep-all;
+                    }
+                    .date {
+                        margin-top:15px;
+                        color:$gray;
+                        font-size:12px;
+                    }
+                }
+            }
+            a.inner {
+                .info .desc {
+                    @include textEllipsisClamp(5);
+                }
+            }
+        }
+    }
+}
+
+// 협력사 리스트
+.partners-lists {
+    li {
+        margin-top:35px;
+        &:first-child {
+            margin-top:0;
+        }
+        .ci {
+            display:block;
+            box-shadow:$boxshadow;
+            text-align:center;
+        }
+        p {
+            margin-top:15px;
+            @include font;
+        }
+    }
+}
+
+// 팀매칭 내역 
+.my-matching-lists {
+    li {
+        margin-top:30px;
+        &:first-child {
+            margin-top:0;
+        }
+    }
+    .inner {
+        border:1px solid $border;
+        .num {
+            display:block;
+            padding:10px 16px;
+            background:$disabled;
+            @include font-sm;
+            color:$cont;
+        }
+        .info {
+            position:relative;
+            padding:16px;
+            .state {
+                float:left;
+                height:24px;
+                padding:0 10px;
+                border:1px solid $point;
+                border-radius:$border-radius;
+                color:$point;
+                font-size:12px;
+                line-height:23px;
+                font-weight:500;
+            }
+            .date {
+                float:right;
+                font-size:12px;
+                line-height:24px;
+                color:$cont;
+            }
+            .matchings {
+                clear:both;
+                display:flex;
+                padding-top:15px;
+                justify-content:space-between;
+                align-items:flex-end;
+                p {
+                    @include font-md;
+                }
+            }
+            .btn.btn-sm {
+                display:block;
+                margin-top:10px;
+                margin-left:auto;
+            }
+        }
+    }
+}
+
+// 나의 메시지 리스트
+.my-message-lists {
+    ul.lists {
+        li {
+            margin-top:40px;
+            &:first-child {
+                margin-top:0;
+            }
+            .link {
+                position:relative;
+                display:block;
+                min-height:60px;
+                padding-left:75px;
+                .thumb {
+                    position:absolute;
+                    left:0;
+                    top:0;
+                    width:60px;
+                    height:60px;
+                    border-radius:50%;
+                    background-repeat:no-repeat;
+                    background-position:center;
+                    background-size:cover;
+                    overflow:hidden;
+                }
+                .preview {
+                    display:flex;
+                    .from {
+                        .name {
+                            font-size:14px;
+                            line-height:20px;
+                            font-weight:500;
+                            @include textEllipsis;
+                        }
+                        .msg {
+                            margin-top:6px;
+                            font-size:12px;
+                            line-height:16px;
+                            color:$cont;
+                            word-break:keep-all;
+                            @include textEllipsisClamp(2);
+                        }
+                    }
+                    .info {
+                        margin-left:10px;
+                        text-align:right;
+                        .date {
+                            font-size:12px;
+                            line-height:20px;
+                            color:$gray;
+                            white-space:nowrap;
+                        }
+                        .count {
+                            display:inline-block;
+                            width:auto;
+                            min-width:15px;
+                            height:15px;
+                            margin-top:6px;
+                            margin-left:auto;
+                            padding:0 4px;
+                            border-radius:8px;
+                            background:$point;
+                            text-align:center;
+                            color:$white;
+                            font-size:11px;
+                            line-height:14px;
+                            font-weight:500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

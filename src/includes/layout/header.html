@@ -1,0 +1,146 @@
+<header>
+    @@if(context.main) {
+    <div class="head-cont main">
+        <h1><a href="/"><img src="/images/logo.png" alt="티홀 로고"></a></h1>
+        <div class="alerts">
+            <a href="#n" class="alert-msg" aria-label="알림"><span class="count">4</span></a><!-- 알림 '.count' 3자리(999)까지 표기, 이후 999+ / 미로그인 상태일 때 data 비우면 미노출 -->
+            <a href="#n" class="alert-chat" aria-label="채팅 알림"><span class="count">10</span></a><!-- 알림 '.count' 3자리(999)까지 표기, 이후 999+ / 미로그인 상태일 때 data 비우면 미노출 -->
+        </div>
+        <button type="button" class="btn-menu-all" onclick="gnbOpen();"><span class="bar"></span><span class="blind">전체 메뉴 보기</span></button>
+    </div>
+    }
+    @@if(context.sub){
+    <div class="head-cont">
+        <a href="#n" class="btn-back"><span class="blind">이전페이지로 이동</span></a>
+        <h1><span class="page-title">@@title</span></h1>
+        <button type="button" class="btn-menu-all" onclick="gnbOpen();"><span class="bar"></span><span class="blind">전체 메뉴 보기</span></button>
+    </div>
+    }
+    <div id="menu-all">
+        <span class="menu-bg" aria-label="전체 메뉴 닫기" onclick="gnbClose();"></span>
+        <div class="menu-cont">
+            <div class="menu-head">
+                <div class="logo">
+                    <a href="/"><img src="/images/logo.png" alt="티홀 로고. 메인으로 이동"></a>
+                </div>
+                <ul class="my-menu">
+                    <li><a href="/page/login.html" class="my01">로그인</a></li>
+                    <!-- <li><a href="/page/logout.html" class="my01 on">로그아웃</a></li> -->
+                    <li><a href="/page/join.html" class="my02">회원가입</a></li>
+                    <li><a href="/page/mypage_01.html" class="my02 on">마이페이지</a></li>
+                    <li><a href="/page/mypage_07.html" class="my03">알림<span class="count">999+</span></a></li><!-- 알림 '.count' 3자리(999)까지 표기, 이후 999+ / 미로그인 상태일 때 data 비우면 미노출 -->
+                    <li><a href="/page/mypage_06.html" class="my04">채팅<span class="count">999</span></a></li><!-- 알림 '.count' 3자리(999)까지 표기, 이후 999+ / 미로그인 상태일 때 data 비우면 미노출 -->
+                </ul>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li>
+                        <a href="#n" class="dep1">팀매칭</a>
+                        <ul class="depth2">
+                            <li><a href="/page/sub_01_01.html">전체</a></li>
+                            <li><a href="/page/sub_01_01.html">제주</a></li>
+                            <li><a href="/page/sub_01_01.html">강원</a></li>
+                            <li><a href="/page/sub_01_01.html">전북</a></li>
+                            <li><a href="/page/sub_01_01.html">부산</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#n" class="dep1">팀매칭접수하기</a>
+                        <ul class="depth2">
+                            <li><a href="/page/sub_02.html">전체</a></li>
+                            <li><a href="/page/sub_02.html">긴급 요청</a></li>
+                            <li><a href="/page/sub_02.html">이번 달 요청</a></li>
+                            <li><a href="/page/sub_02.html">다음 달 요청</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#n" class="dep1">이용안내</a>
+                        <ul class="depth2">
+                            <li><a href="/page/sub_03_01.html">팀매칭 이용 방법</a></li>
+                            <li><a href="/page/sub_03_01.html">이용 규정</a></li>
+                            <li><a href="/page/sub_03_01.html">팀매칭 매너</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#n" class="dep1">지원센터</a>
+                        <ul class="depth2">
+                            <li><a href="/page/sub_04_01.html">공지사항</a></li>
+                            <li><a href="/page/sub_04_02.html">뉴스/언론</a></li>
+                            <li><a href="/page/sub_04_03_01.html">이벤트</a></li>
+                            <li><a href="/page/sub_04_04.html">자주찾는 질문</a></li>
+                            <li><a href="/page/sub_04_05.html">온라인 1:1 문의</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#n" class="dep1">T.Hall 소개</a>
+                        <ul class="depth2">
+                            <li><a href="/page/sub_05_01.html">회사소개</a></li>
+                            <li><a href="/page/sub_05_02.html">CEO 인사말</a></li>
+                            <li><a href="/page/sub_05_03.html">사업내용</a></li>
+                            <li><a href="/page/sub_05_04.html">홍보자료</a></li>
+                            <li><a href="/page/sub_05_05.html">주요협력사</a></li>
+                            <li><a href="/page/sub_05_06.html">찾아오시는 길</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/page/sub_04_04.html" class="dep1">자주찾는 질문</a></li>
+                    <li><a href="/page/sub_04_05.html" class="dep1">온라인 1:1 문의</a></li>
+                </ul>
+            </nav>
+            <button type="button" class="menu-all-close" onclick="gnbClose();"><span class="blind">전체 메뉴 닫기</span></button>
+        </div>
+    </div>
+    @@if(context.main){
+    <nav id="gnb">
+        <ul>
+            <li><a href="/page/sub_01_01.html">팀매칭</a></li>
+            <li><a href="/page/sub_02.html">매칭접수</a></li>
+            <li><a href="">이용방법</a></li>
+        </ul>
+    </nav>
+    }
+    @@if(context.subtab === 'sub04'){
+    <nav id="gnb" class="type2">
+        <div class="scroll">
+            <ul class="tabs">
+                <li@@if(context.page === 'sub0401'){ class="active"}><a href="/page/sub_04_01.html">공지사항</a></li>
+                <li@@if(context.page === 'sub0402'){ class="active"}><a href="/page/sub_04_02.html">뉴스/언론</a></li>
+                <li@@if(context.page === 'sub0403'){ class="active"}><a href="/page/sub_04_03_01.html">이벤트</a></li>
+                <li@@if(context.page === 'sub0404'){ class="active"}><a href="/page/sub_04_04.html">자주찾는 질문</a></li>
+                <li@@if(context.page === 'sub0405'){ class="active"}><a href="/page/sub_04_05.html">온라인 1:1 문의</a></li>
+            </ul>
+        </div>
+    </nav>
+    }
+    @@if(context.subtab === 'sub05'){
+    <nav id="gnb" class="type2">
+        <div class="scroll">
+            <ul class="tabs">
+                <li@@if(context.page === 'sub0501'){ class="active"}><a href="/page/sub_05_01.html">회사소개</a></li>
+                <li@@if(context.page === 'sub0502'){ class="active"}><a href="/page/sub_05_02.html">CEO 인사말</a></li>
+                <li@@if(context.page === 'sub0503'){ class="active"}><a href="/page/sub_05_03.html">사업내용</a></li>
+                <li@@if(context.page === 'sub0504'){ class="active"}><a href="/page/sub_05_04.html">홍보자료</a></li>
+                <li@@if(context.page === 'sub0505'){ class="active"}><a href="/page/sub_05_05.html">주요협력사</a></li>
+                <li@@if(context.page === 'sub0506'){ class="active"}><a href="/page/sub_05_06.html">찾아오시는 길</a></li>
+            </ul>
+        </div>
+    </nav>
+    }
+    @@if(context.subtab === 'my'){
+    <nav id="gnb" class="type2">
+        <div class="scroll">
+            <ul class="tabs">
+                <li@@if(context.page === 'my01'){ class="active"}><a href="/page/mypage_01.html">내정보 수정</a></li>
+                <li@@if(context.page === 'my02'){ class="active"}><a href="/page/mypage_02.html">팀매칭 내역</a></li>
+                <li@@if(context.page === 'my03'){ class="active"}><a href="/page/mypage_03.html">팀매칭 접수 내역</a></li>
+                <li@@if(context.page === 'my04'){ class="active"}><a href="/page/mypage_04.html">나의 포인트</a></li>
+                <li@@if(context.page === 'my05'){ class="active"}><a href="/page/mypage_05.html">찜 리스트</a></li>
+                <li@@if(context.page === 'my06'){ class="active"}><a href="/page/mypage_06.html">나의 메시지</a></li>
+                <li@@if(context.page === 'my07'){ class="active"}><a href="/page/mypage_07.html">나의 알림</a></li>
+                <li@@if(context.page === 'my08'){ class="active"}><a href="/page/mypage_08.html">1:1 문의내역</a></li>
+                <li@@if(context.page === 'my09'){ class="active"}><a href="/page/mypage_09.html">비밀번호 변경</a></li>
+                <li@@if(context.page === 'my10'){ class="active"}><a href="/page/mypage_10.html">회원탈퇴</a></li>
+            </ul>
+        </div>
+    </nav>
+    }
+</header>

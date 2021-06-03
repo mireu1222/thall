@@ -1,0 +1,121 @@
+<div class="tbl-wrap">
+    @@if(context.sub0502){
+    <p class="tbl-title">내용을 입력하신 후 신청해 주시면 담당자가 신속하게 연락 드리겠습니다.</p>
+    }
+    @@if(context.sub0702){
+    <p class="tbl-title">궁금하신 내용에 해당하는 항목을 선택하신 후 문의해 주시면 기입하신 이메일 또는 연락처로 답변 드리겠습니다.</p>
+    }
+    <table class="table row-tbl">
+        <caption>@@caption</caption>
+        <colgroup>
+            <col class="col1">
+            <col>
+        </colgroup>
+        @@if(context.sub0502){
+        <tbody>
+            <tr>
+                <th scope="row"><label for="ipt-compname" class="essen">회사명</label></th>
+                <td>
+                    <input type="text" id="ipt-compname" class="form-control">
+                </td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="ipt-phone" class="essen">휴대전화</label></th>
+                <td><input type="text" id="ipt-phone" class="form-control" placeholder="'-' 제외 11자리 숫자만 입력" maxlength="11"></td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="ipt-email" class="essen">이메일</label></th>
+                <td><input type="text" id="ipt-email" class="form-control"></td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="ipt-title" class="essen">제목</label></th>
+                <td><input type="text" id="ipt-title" class="form-control"></td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="ipt-cont" class="essen">내용</label></th>
+                <td><textarea id="ipt-cont" class="form-control"></textarea></td>
+            </tr>
+            <tr>
+                <th scope="row">사업자등록증</th>
+                <td>
+                    <div class="inputfile-wrap">
+                        <input type="text" class="form-control" value="" disabled>
+                        <label for="upload-file" class="btn btn-basic">파일찾기</label>
+                        <input type="file" id="upload-file">
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        }
+        @@if(context.sub0702){
+        <tbody>
+            <tr>
+                <th scope="row"><p class="label essen">항목</p></th>
+                <td>
+                    @@include('./modules/slt-list.html', {
+                        size : 'auto',
+                        rdo : 'rdo-slt',
+                        slt : [
+                            '질문항목1', '질문항목2', '질문항목3'
+                        ]
+                    })
+                </td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="ipt-name" class="essen">이름</label></th>
+                <td>
+                    <input type="text" id="ipt-name" class="form-control">
+                </td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="ipt-phone" class="essen">휴대전화</label></th>
+                <td><input type="text" id="ipt-phone" class="form-control" placeholder="'-' 제외 11자리 숫자만 입력" maxlength="11"></td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="ipt-email" class="essen">이메일</label></th>
+                <td><input type="text" id="ipt-email" class="form-control"></td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="ipt-title" class="essen">제목</label></th>
+                <td><input type="text" id="ipt-title" class="form-control"></td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="ipt-cont" class="essen">내용</label></th>
+                <td><textarea id="ipt-cont" class="form-control"></textarea></td>
+            </tr>
+            <tr>
+                <th scope="row">파일첨부</th>
+                <td>
+                    <div class="inputfile-wrap">
+                        <input type="text" class="form-control" value="" disabled>
+                        <label for="upload-file" class="btn btn-basic">파일찾기</label>
+                        <input type="file" id="upload-file">
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        }
+    </table>
+</div>
+@@if(context.agree){
+<div class="agree-chk-box">
+    <p class="tit">개인정보수집동의</p>
+    <div class="agree-cont">
+        ■ 수집하는 개인정보 항목<br>
+        회사는 업무문의, 지원문의 등등을 위해 아래와 같은 개인정보를 수집하고 있습니다.<br>
+        ο 수집항목 : 이름 , 휴대전화번호 , 이메일 , 쿠키 , 접속 IP 정보<br>
+        ο 개인정보 수집방법 : 홈페이지(www.abc.kr), 서면양식 <br>
+        ■ 개인정보의 수집 및 이용목적<br>
+        회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.<br>
+        ο 업무에 대한 문의, 지원문의 등 민원처리, 고지사항 전달 <br>
+        ■ 개인정보의 보유 및 이용기간<br>
+        원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 다음의 정보에 대해서는 아래의 이유로 명시한 기간 동안 보존합니다.<br>
+        ο 보존 항목 : 이름 , 휴대전화번호 , 이메일 , 접속 로그 , 쿠키 , 접속 IP <br>
+        ο 정보보존 기간 : 1년
+    </div>
+    <span class="chk-wrap">
+        <input type="checkbox" id="agree">
+        <label for="agree">위 내용을 숙지하였으며 동의합니다.</label>
+    </span>
+</div>
+}

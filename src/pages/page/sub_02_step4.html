@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            sub : true,
+            title : '팀매칭 접수하기',
+        })
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="container no-depth">
+            <section class="sect">
+                <h2 class="h2-title">매칭 접수 정보를<br>확인해 주세요!</h2>
+                <div class="profile-wrap">
+                    <ul class="lists">
+                        <li>
+                            <span class="thumb"><img src="/images/@thumb.jpg" alt=""></span>
+                            <a href="#n" class="btn btn-border-point btn-sm round"><span>프로필 보기</span></a>
+                        </li>
+                        <li>
+                            <span class="thumb"><img src="/images/@thumb2.jpg" alt=""></span>
+                            <a href="#n" class="btn btn-border-point btn-sm round"><span>프로필 보기</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="matching-info-wrap">
+                    <dl>
+                        <dt>라운드 날짜</dt>
+                        <dd>2021-05-05(수)</dd>
+                    </dl>
+                    <dl>
+                        <dt>라운드 시간</dt>
+                        <dd>오전 11:00~12:00</dd>
+                    </dl>
+                    <dl>
+                        <dt>라운드 인원</dt>
+                        <dd>커플</dd>
+                    </dl>
+                    <dl>
+                        <dt>지역</dt>
+                        <dd>제주시 동부</dd>
+                    </dl>
+                    <dl>
+                        <dt>희망인원</dt>
+                        <dd>커플</dd>
+                    </dl>
+                    <dl>
+                        <dt>희망 연령대</dt>
+                        <dd>30~40대</dd>
+                    </dl>
+                    <dl>
+                        <dt>핸디캡</dt>
+                        <dd>보기팀</dd>
+                    </dl>
+                    <dl>
+                        <dt>그린피</dt>
+                        <dd>10만~13만</dd>
+                    </dl>
+                    <dl>
+                        <dt>희망 골프장</dt>
+                        <dd>그린필드</dd>
+                    </dl>
+                    <dl>
+                        <dt>라운드 스타일</dt>
+                        <dd>명랑골프</dd>
+                    </dl>
+                </div>
+                <form action="">
+                    <div class="form-wrap">
+                        <div class="row">
+                            <p class="label">남기고 싶은 말씀</p>
+                            <div class="forms">
+                                <textarea class="form-control" placeholder="메시지를 입력하세요."></textarea>
+                            </div>
+                        </div>
+                        <div class="btn-submit">
+                            <button type="button" class="btn btn-lg btn-border-basic" onclick="location.href='/page/sub_02_step3.html'"><span>이전단계</span></button>
+                            <button type="button" class="btn btn-lg btn-point" onclick="location.href='/page/sub_02_comp.html'"><span>접수완료</span></button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+</body>
+</html>

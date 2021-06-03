@@ -1,0 +1,351 @@
+/* 팀매칭 접수하기 */
+.profile-wrap {
+    .lists {
+        position:relative;
+        display:flex;
+        justify-content:space-between;
+        &::before {
+            content:' ';
+            position:absolute;
+            top:calc((100% - 50px) / 2);
+            left:50%;
+            width:30px;
+            height:30px;
+            margin-top:-15px;
+            margin-left:-15px;
+            border-radius:50%;
+            background:$point url('/images/bg/bg-plus.png') center no-repeat;
+            background-size:15px;
+        }
+        li {
+            @include calcs(width, 290px, 656px);
+            padding:0 10px;
+            text-align:center;
+            .thumb {
+                display:block;
+                margin-bottom:20px;
+                border-radius:50%;
+                overflow:hidden;
+            }
+        }
+    }
+}
+.matching-info-wrap {
+    margin-top:25px;
+    margin-bottom:30px;
+    padding:25px; 
+    border:1px solid $border;
+    border-radius:$border-radius-lg;
+    dl {
+        @include clearfix;
+        margin-top:15px;
+        @include font;
+        &:first-child {
+            margin-top:0;
+        }
+        dt {
+            float:left;
+            color:$cont;
+        }
+        dd {
+            @include calcs(margin-left, 120px, 291px);
+            font-weight:500;
+        }
+    }
+} 
+.complete-msg {
+    text-align:center;
+    &::before {
+        content:' ';
+        display:block;
+        width:50px;
+        height:53px;
+        margin:0 auto 25px;
+        background:url('/images/icon/icon-complete.png') center no-repeat;
+        background-size:100%;
+    }
+    .tit {
+        @include font-title;
+    }
+    .desc {
+        margin-top:10px;
+        margin-bottom:30px;
+        font-size:14px;
+    }
+    .text {
+        margin-top:20px;
+        margin-bottom:25px;
+        @include font-sm;
+        color:$cont;
+    }
+    .btn {
+        min-width:155px;
+    }
+    .btns {
+        margin-top:40px;
+        border-top:1px solid $border;
+        padding-top:30px;
+        .btn {
+            display:block;
+            width:100%;
+            margin-top:10px;
+            background:#bbb;
+            color:$white;
+            &:first-child {
+                margin-top:0;
+            }
+        }
+    }
+}
+/* 찾아오시는 길 */
+.contact-us {
+    .map-area {
+        margin:0 -16px;
+        .root_daum_roughmap {
+            width:100%;
+            .wrap_controllers {
+                display:none !important;
+            }
+            .map_border {
+                display:none !important;
+            }
+        }
+    }
+    .tit {
+        margin-top:25px;
+        padding-bottom:20px;
+        border-bottom:1px solid $border;
+        font-size:17px;
+        font-weight:500;
+    }
+    .info {
+        margin-top:20px;
+        dl {
+            margin-top:15px;
+            @include font;
+            @include clearfix;
+            &:first-child {
+                margin-top:0;
+            }
+            dt {
+                float:left;
+                width:80px;
+                color:$cont;
+                font-weight:500;
+            }
+            dd {
+                margin-left:80px;
+                color:$gray;
+            }
+        }
+    }
+}
+/* 마이페이지 - 나의 포인트 */
+.my-point {
+    dl {
+        padding:20px 16px;
+        border-radius:$border-radius-lg;
+        background:$point;
+        text-align:center;
+        dt {
+            color:rgba($white, 0.85);
+            font-size:14px;
+        }
+        dd {
+            margin-top:10px;
+            color:$white;
+            font-size:14px;
+            font-weight:700;
+            em {
+                display:inline-block;
+                font-size:23px;
+                font-weight:900;
+                vertical-align:bottom;
+            }
+        }
+    }
+    .point-alert {
+        margin-top:15px;
+        text-align:right;
+        color:$cont;
+        font-size:14px;
+        &::before {
+            content:'*';
+            color:$point;
+        }
+    }
+}
+/* 대화창 */
+.message-area {
+    position:relative;
+    // .message-head {
+    //     position:absolute;
+    //     top:0;
+    //     left:0;
+    //     right:0;
+    //     height:50px;
+    //     padding:0 50px;
+    //     border-bottom:1px solid $border;
+    //     .from {
+    //         text-align:center;
+    //         font-size:14px;
+    //         font-weight:500;
+    //         line-height:49px;
+    //         @include textEllipsis;
+    //     }
+    //     .btn-back {
+    //         position:absolute;
+    //         left:0;
+    //         top:0;
+    //         width:50px;
+    //         height:50px;
+    //         &::before {
+    //             content:' ';
+    //             position:absolute;
+    //             top:50%;
+    //             left:16px;
+    //             width:9px;
+    //             height:9px;
+    //             margin-top:-5px;
+    //             border:1px solid $basic;
+    //             border-top:none;
+    //             border-right:none;
+    //             transform:rotate(45deg);
+    //         }
+    //         &::after {
+    //             content:' ';
+    //             position:absolute;
+    //             top:50%;
+    //             left:16px;
+    //             width:14px;
+    //             height:1px;
+    //             margin-top:-1px;
+    //             background:$basic;
+    //         }
+    //     }
+    // }
+    .message-body {
+        padding:15px 16px 0;
+        .msg-date {
+            margin-bottom:25px;
+            text-align:center;
+            span {
+                display:inline-block;
+                vertical-align:top;
+                height:26px;
+                padding:0 22px;
+                background:$border;
+                border-radius:13px;
+                color:$white;
+                font-size:12px;
+                line-height:26px;
+            }
+        }
+        .msg-wrap {
+            position:relative;
+            margin-bottom:25px;
+            &.from {
+                padding-left:55px;
+                .thumb {
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    width:40px;
+                    height:40px;
+                    background-size:cover;
+                    background-repeat:no-repeat;
+                    background-position:center;
+                    border-radius:50%;
+                    overflow:hidden;
+                }
+                .msg {
+                    p {
+                        background:$disabled;
+                        color:$basic;
+                        &::before {
+                            left:-6px;
+                            background-image:url('/images/bg/bg-msg-from.png');
+                        }
+                    }
+                }
+            }
+            &.to {
+                padding-right:8px;
+                .msg {
+                    flex-direction:row-reverse;
+                    p {
+                        background:$point;
+                        color:$white;
+                        &::before {
+                            right:-6px;
+                            background-image:url('/images/bg/bg-msg-to.png');
+                        }
+                    }
+                }
+            }
+            .msg {
+                display:flex;
+                align-items:flex-end;
+                margin-bottom:10px;
+                p {
+                    position:relative;
+                    max-width:90%;
+                    padding:10px 16px;
+                    border-radius:$border-radius-lg;
+                    @include font;
+                    word-break:keep-all;
+                    &::before {
+                        content:' ';
+                        position:absolute;
+                        top:8px;
+                        width:6px;
+                        height:7px;
+                        background-repeat:no-repeat;
+                        background-size:100%;
+                        background-position:center;
+                    }
+                }
+                span.date {
+                    margin:0 10px;
+                    color:$gray;
+                    font-size:12px;
+                    white-space:nowrap;
+                }
+            }
+        }
+    }
+    .message-foot {
+        display:flex;
+        align-items:flex-end;
+        border-top:2px solid $border;
+        padding:16px;
+        padding-bottom:40px;
+        .form-control {
+            height:40px;
+            padding:8px 10px;
+            border-radius:$border-radius-lg;
+            @include font;
+        }
+        .text-area {
+            flex:1 1 auto;
+            border:1px solid $border;
+            border-radius:$border-radius-lg;
+            padding:8px 10px;
+            textarea {
+                display:block;
+                width:100%;
+                height:22px;
+                @include font;
+                border:none;
+                padding:0;
+                &:focus {
+                    outline:0;
+                }
+            }
+        }
+        .btn.btn-point {
+            margin-left:8px;
+            border-radius:$border-radius;
+        }
+    }
+}

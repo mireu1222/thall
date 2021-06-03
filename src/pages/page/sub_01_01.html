@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            sub : true,
+            title : '팀매칭',
+        })
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="container no-depth">
+            @@include('./layout/page-tab.html', {
+                sub01 : true,
+                page : '0101'
+            })
+            <section class="sect">
+                <div class="calendar-wrap">
+                    <div class="cal-head">
+                        <p class="month">5월 2021</p>
+                        <button type="button" class="btn-cal prev"><span class="blind">이전달</span></button>
+                        <button type="button" class="btn-cal next"><span class="blind">다음달</span></button>
+                    </div>
+                    <div class="cal-body">
+                        <table class="cal-tbl">
+                            <thead>
+                                <tr>
+                                    <th scope="col">일</th>
+                                    <th scope="col">월</th>
+                                    <th scope="col">화</th>
+                                    <th scope="col">수</th>
+                                    <th scope="col">목</th>
+                                    <th scope="col">금</th>
+                                    <th scope="col">토</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="disabled"><span>25</span></td><!-- 이전달/다음달/선택불가날짜/지난날짜 -->
+                                    <td class="disabled"><span>26</span></td>
+                                    <td class="disabled"><span>27</span></td>
+                                    <td class="disabled"><span>28</span></td>
+                                    <td class="disabled"><span>29</span></td>
+                                    <td class="disabled"><span>30</span></td>
+                                    <td class="disabled"><span>1</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="today"><a href="/page/sub_01_01_view.html">2</a></td><!-- 오늘 -->
+                                    <td><a href="/page/sub_01_01_view.html">3</a></td>
+                                    <td><a href="/page/sub_01_01_view.html">4</a></td>
+                                    <td>
+                                        <a href="/page/sub_01_01_view.html">
+                                            5
+                                            <span class="state ing">진행 99</span>
+                                            <span class="state waiting">대기 99+</span><!-- '99'이상일경우 '99+' 표기 -->
+                                        </a>
+                                    </td>
+                                    <td><a href="/page/sub_01_01_view.html">6</a></td>
+                                    <td><a href="/page/sub_01_01_view.html">7</a></td>
+                                    <td><a href="/page/sub_01_01_view.html">8</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/page/sub_01_01_view.html">9</a></td>
+                                    <td>
+                                        <a href="/page/sub_01_01_view.html">
+                                            10
+                                            <span class="state ing">진행 99</span>
+                                        </a>
+                                    </td>
+                                    <td><a href="/page/sub_01_01_view.html">11</a></td>
+                                    <td><a href="/page/sub_01_01_view.html">12</a></td>
+                                    <td>
+                                        <a href="/page/sub_01_01_view.html">
+                                            13
+                                            <span class="state waiting">대기 99+</span><!-- '99'이상일경우 '99+' 표기 -->
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="/page/sub_01_01_view.html">
+                                            14
+                                            <span class="state ing">진행 99</span>
+                                            <span class="state waiting">대기 99+</span><!-- '99'이상일경우 '99+' 표기 -->
+                                        </a>
+                                    </td>
+                                    <td><a href="/page/sub_01_01_view.html">15</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/page/sub_01_01_view.html">16</a></td>
+                                    <td><a href="/page/sub_01_01_view.html">17</a></td>
+                                    <td><a href="/page/sub_01_01_view.html">18</a></td>
+                                    <td><a href="/page/sub_01_01_view.html">19</a></td>
+                                    <td><a href="/page/sub_01_01_view.html">20</a></td>
+                                    <td><a href="/page/sub_01_01_view.html">21</a></td>
+                                    <td><a href="/page/sub_01_01_view.html">22</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/page/sub_01_01_view.html">23</a></td>
+                                    <td><a href="/page/sub_01_01_view.html">24</a></td>
+                                    <td>
+                                        <a href="/page/sub_01_01_view.html">
+                                            25
+                                            <span class="state ing">진행 99</span>
+                                            <span class="state waiting">대기 99+</span><!-- '99'이상일경우 '99+' 표기 -->
+                                        </a>
+                                    </td>
+                                    <td><a href="/page/sub_01_01_view.html">26</a></td>
+                                    <td><a href="/page/sub_01_01_view.html">27</a></td>
+                                    <td><a href="/page/sub_01_01_view.html">28</a></td>
+                                    <td><a href="/page/sub_01_01_view.html">29</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/page/sub_01_01_view.html">30</a></td>
+                                    <td><a href="/page/sub_01_01_view.html">31</a></td>
+                                    <td class="disabled"><span>1</span></td>
+                                    <td class="disabled"><span>2</span></td>
+                                    <td class="disabled"><span>3</span></td>
+                                    <td class="disabled"><span>4</span></td>
+                                    <td class="disabled"><span>5</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+</body>
+</html>

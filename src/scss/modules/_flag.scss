@@ -1,0 +1,48 @@
+/* flag */
+.flag {
+    display:inline-block;
+    vertical-align:top;
+    min-width:65px;
+    height:28px;
+    padding:0 10px;
+    border:1px solid transparent;
+    text-align:center;
+    font-size:14px;
+    line-height:26px;
+    @include skew;
+    @include mobile {
+        min-width:50px;
+        height:24px;
+        font-size:13px;
+        line-height:22px;
+        padding:0 6px;
+    }
+    // style 
+    @each $color, $value, $ratio in $colors {
+        &.flag-#{$color} {
+            background-color:$value;
+            border-color:$value;
+            @if $ratio == 'dark' {
+                color:$white;
+            } @else if $ratio == 'bright' {
+                color:$basic;
+            }
+        }
+        &.flag-border-#{$color} {
+            border-color:$value;
+            color:$value;
+        }
+    }
+}
+.text-flag {
+    display:inline-block;
+    vertical-align:top;
+    @include font;
+    font-weight:700;
+    @include skew;
+    @each $color, $value, $ratio in $colors {
+        &.text-flag-#{$color} {
+            color:$value;
+        }
+    }
+}

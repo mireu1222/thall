@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            sub : true,
+            title : '1:1 문의내역',
+            subtab : 'my',
+            page : 'my08'
+        })
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="container">
+            <section class="sect">
+                <h2 class="h2-title">나의 질문과 답변</h2>
+                @@include('./modules/accordion-list.html', {
+                    my : true
+                })
+                @@include('./modules/pagination.html')
+                <button type="button" class="btn btn-point btn-lg full rounded mt-40"><span>1:1 문의하기</span></button>
+            </section>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+    <script>
+        accordion();
+    </script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            sub : true,
+            title : '회원가입',
+        })
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="container no-depth">
+            <section class="sect">
+                <div class="members-wrap">
+                    <h2 class="title">SNS를 사용하고 계신가요?</h2>
+                    <p class="desc">사용하고 계신 계정을 통한 간편 로그인으로<br>이용하실 수 있습니다.</p>
+                    <ul class="login-btn-list">
+                        <li><a href="" class="btn btn-lg rounded naver">네이버 아이디로 로그인</a></li>
+                        <li><a href="" class="btn btn-lg rounded kakao">카카오톡 아이디로 로그인</a></li>
+                        <li><a href="" class="btn btn-lg rounded thall">티홀 아이디로 로그인</a></li>
+                    </ul>
+                    <!-- form -->
+                    <form action="">
+                        <div class="form-wrap type2">
+                            <h3 class="form-title">회원가입하고 다양한 혜택을 누리세요!</h3>
+                            <p class="essen-msg" aria-hidden="true">필수 입력 정보입니다.</p>
+                            <div class="row">
+                                <p class="label esn">성명<span class="blind">필수입력</span></p>
+                                <div class="forms">
+                                    <input type="text" class="form-control is-valid" placeholder="성명(실명) 입력" value="홍길동" aria-label="성명(실명) 입력"><!-- 정상 입력 시 .is-valid addClass -->
+                                    <p class="error"></p><!-- 에러메시지 -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p class="label esn">아이디<span class="blind">필수입력</span></p>
+                                <div class="forms">
+                                    <input type="text" class="form-control" placeholder="아이디 입력" aria-label="아이디 입력">
+                                    <p class="error"></p><!-- 에러메시지 -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p class="label esn">비밀번호<span class="blind">필수입력</span></p>
+                                <div class="forms">
+                                    <input type="password" class="form-control" placeholder="비밀번호(6~16자의 영문, 숫자, 특수기호)" aria-label="비밀번호 입력">
+                                    <p class="error"></p><!-- 에러메시지 -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p class="label esn">비밀번호 확인<span class="blind">필수입력</span></p>
+                                <div class="forms">
+                                    <input type="password" class="form-control" placeholder="비밀번호 확인" aria-label="비밀번호 재확인 입력">
+                                    <p class="error"></p><!-- 에러메시지 -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p class="label esn">이메일<span class="blind">필수입력</span></p>
+                                <div class="forms">
+                                    <input type="text" class="form-control" placeholder="이메일 입력" aria-label="이메일 입력">
+                                    <p class="error"></p><!-- 에러메시지 -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p class="label esn">휴대폰번호<span class="blind">필수입력</span></p>
+                                <div class="forms">
+                                    <select class="type2" data-toggle="modal-select" data-dim="true" aria-label="통신사 선택">
+                                        <option value="" data-type="placeholder" selected disabled>통신사 선택</option>
+                                        <option value="">SKT</option>
+                                        <option value="">LG U+</option>
+                                        <option value="">KT</option>
+                                    </select>
+                                    <input type="text" class="form-control" placeholder="'-'를 제외한 11자리 숫자 입력" aria-label="'-'제외 핸드폰번호 11자리 숫자 입력">
+                                    <p class="error"></p><!-- 에러메시지 -->
+                                </div>
+                                <div class="forms">
+                                    <button type="button" class="btn btn-border-basic"><span>인증번호 전송</span></button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p class="label esn">인증번호<span class="blind">필수입력</span></p>
+                                <div class="forms">
+                                    <input type="text" class="form-control" placeholder="인증번호 입력" aria-label="인증번호 입력">
+                                    <p class="error"></p><!-- 에러메시지 -->
+                                </div>
+                                <div class="forms">
+                                    <button type="button" class="btn btn-border-basic"><span>확인</span></button>
+                                    <button type="button" class="btn btn-border-basic"><span>재전송</span></button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p class="label esn">생년월일<span class="blind">필수입력</span></p>
+                                <div class="forms">
+                                    <input type="text" class="form-control" placeholder="예) 19900101" aria-label="생년월일 숫자만 8자리 입력">
+                                    <p class="error"></p><!-- 에러메시지 -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p class="label esn">성별<span class="blind">필수입력</span></p>
+                                <div class="forms">
+                                    @@include('./modules/slt-list.html', {
+                                        size : 'size2',
+                                        rdobtn : 'gender',
+                                        slt : [
+                                            '남자', '여자'
+                                        ]
+                                    })
+                                    <p class="error"></p><!-- 에러메시지 -->
+                                </div>
+                            </div>
+    
+                            <!-- 약관 동의 -->
+                            <div class="terms-agree-wrap" data-toggle="allChk">
+                                <div class="all box">
+                                    <span class="chk-btn-wrap">
+                                        <input type="checkbox" id="agree-all" class="chk-all" name="terms-agree">
+                                        <label for="agree-all">전체동의</label>
+                                    </span>
+                                    <button type="button" class="btn-toggle arrow open" data-toggle="collapse" data-target="#agree-list" aria-controls="agree-list" data-opentext="전체 약관 열기" data-closetext="전체 약관 닫기" aria-expanded="true"><span class="blind">전체 약관 닫기</span></button>
+                                </div>
+                                <div id="agree-list" class="agree-list">
+                                    <li>
+                                        <div class="toggle-head box">
+                                            <span class="chk-btn-wrap">
+                                                <input type="checkbox" id="agree-01" name="terms-agree">
+                                                <label for="agree-01">이용약관 동의(필수)</label>
+                                            </span>
+                                            <button type="button" class="btn-toggle" data-toggle="collapse" data-target="#term01" aria-control="term01" data-opentext="보기" data-closetext="닫기" aria-expanded="false"><span>보기</span></button>
+                                        </div>
+                                        <div id="term01" class="toggle-body">
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="toggle-head box">
+                                            <span class="chk-btn-wrap">
+                                                <input type="checkbox" id="agree-02" name="terms-agree">
+                                                <label for="agree-02">개인정보 수집 및 이용 동의(필수)</label>
+                                            </span>
+                                            <button type="button" class="btn-toggle" data-toggle="collapse" data-target="#term02" aria-control="term01" data-opentext="보기" data-closetext="닫기" aria-expanded="false"><span>보기</span></button>
+                                        </div>
+                                        <div id="term02" class="toggle-body">
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="toggle-head box">
+                                            <span class="chk-btn-wrap">
+                                                <input type="checkbox" id="agree-03" name="terms-agree">
+                                                <label for="agree-03">개인정보 수집 및 이용동의(선택)</label>
+                                            </span>
+                                            <button type="button" class="btn-toggle" data-toggle="collapse" data-target="#term03" aria-control="term01" data-opentext="보기" data-closetext="닫기" aria-expanded="false"><span>보기</span></button>
+                                        </div>
+                                        <div id="term03" class="toggle-body">
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감<br>
+                                            약관 내용이 들어감
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="toggle-head box">
+                                            <span class="chk-btn-wrap">
+                                                <input type="checkbox" id="agree-04" name="terms-agree">
+                                                <label for="agree-04">마케팅 정보 이메일 수신 동의(선택)</label>
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="toggle-head box">
+                                            <span class="chk-btn-wrap">
+                                                <input type="checkbox" id="agree-05" name="terms-agree">
+                                                <label for="agree-05">마케팅 정보 SMS 수신 동의(선택)</label>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </div>
+                            </div>
+                            <!-- // 약관 동의 -->
+    
+                            <div class="btn-submit">
+                                <button type="button" class="btn btn-point btn-lg" onclick="location.href='/page/join-complete.html'"><span>회원가입</span></button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- // form -->
+                </div>
+            </section>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+</body>
+</html>

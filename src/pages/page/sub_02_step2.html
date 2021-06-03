@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            sub : true,
+            title : '팀매칭 접수하기',
+        })
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="container no-depth">
+            <section class="sect">
+                <h2 class="h2-title">원하시는 라운드 인원과 희망 유형을<br>지정해 주세요!</h2>
+                <form action="">
+                    <div class="form-wrap">
+                        <div class="row">
+                            <p class="label type2">라운드 인원<small>(본인과 동반자 인원을 체크해 주세요.)</small></p>
+                            <div class="forms">
+                                @@include('./modules/slt-list.html', {
+                                    rdo : 'our',
+                                    slt : [
+                                        '커플', '남남', '여여', '남1', '여1', '기타'
+                                    ]
+                                })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label type2">본인연령<small>(본인과 동반자 연령을 체크해 주세요.)</small></p>
+                            <div class="forms">
+                                @@include('./modules/slt-list.html', {
+                                    rdo : 'our-years',
+                                    slt : [
+                                        '20대', '30대', '40대', '50대', '60대', '기타'
+                                    ]
+                                })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label type2">희망 유형<small>(희망하는 동반자 유형을 체크해 주세요.)</small></p>
+                            <div class="forms">
+                                @@include('./modules/slt-list.html', {
+                                    rdo : 'others',
+                                    slt : [
+                                        '커플', '남성팀', '여성팀', '무관'
+                                    ]
+                                })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label type2">희망 연령<small>(희망하는 동반자 연령을 체크해 주세요.)</small></p>
+                            <div class="forms">
+                                @@include('./modules/slt-list.html', {
+                                    size : 'size3',
+                                    rdo : 'others-years',
+                                    slt : [
+                                        '20~30대', '30~40대', '40~50대', '50~60대', '무관'
+                                    ]
+                                })
+                            </div>
+                        </div>
+                        <div class="btn-submit">
+                            <button type="button" class="btn btn-lg btn-border-basic" onclick="location.href='/page/sub_02.html'"><span>이전단계</span></button>
+                            <button type="button" class="btn btn-lg btn-point" onclick="location.href='/page/sub_02_step3.html'"><span>다음단계</span></button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+</body>
+</html>

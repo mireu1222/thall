@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            sub : true,
+            title : '홍보자료',
+            subtab : 'sub05',
+            page : 'sub0504'
+        })
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="container">
+            <section class="sect">
+                <div class="promotion-lists">
+                    <ul class="lists">
+                        <li>
+                            <a href="/page/sub_05_04_view.html" class="inner">
+                                <span class="thumb" aria-hidden="true"><img src="/images/@thumb3.jpg" alt=""></span>
+                                <div class="info">
+                                    <p class="tit"><span class="blind">제목</span>홍보글 제목이 들어감</p>
+                                    <p class="desc"><span class="blind">내용 일부</span>홍보글 내용 미리보기가 들어감. 5줄까지 노출됨.</p>
+                                    <p class="date"><span class="blind">등록일</span>2021.05.18</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/page/sub_05_04_view.html" class="inner">
+                                <!-- 썸네일 없는 타입일 때 span.thumb DOM 남아있지 않도록 해주세요. -->
+                                <div class="info">
+                                    <p class="tit"><span class="blind">제목</span>홍보글 제목이 들어감</p>
+                                    <p class="desc"><span class="blind">내용 일부</span>홍보글 내용 미리보기가 들어감. 5줄까지 노출됨. 홍보글 내용 미리보기가 들어감. 5줄까지 노출됨. 홍보글 내용 미리보기가 들어감. 5줄까지 노출됨. 홍보글 내용 미리보기가 들어감. 5줄까지 노출됨. 홍보글 내용 미리보기가 들어감. 5줄까지 노출됨. 홍보글 내용 미리보기가 들어감. 5줄까지 노출됨. 홍보글 내용 미리보기가 들어감. 5줄까지 노출됨. 홍보글 내용 미리보기가 들어감. 5줄까지 노출됨. 홍보글 내용 미리보기가 들어감. 5줄까지 노출됨. 홍보글 내용 미리보기가 들어감. 5줄까지 노출됨.</p>
+                                    <p class="date"><span class="blind">등록일</span>2021.05.18</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="inner">
+                                <div class="video-area">
+                                    <iframe src="https://www.youtube.com/embed/wJHNa3YYhtY?controls=0&playsinline=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="info">
+                                    <p class="tit"><span class="blind">제목</span>동영상 제목이 들어감</p>
+                                    <p class="desc"><span class="blind">내용</span>동영상 내용이 들어감. 말줄임 없이 노출됨.</p>
+                                    <p class="date"><span class="blind">등록일</span>2021.05.18</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="btn-moreview"><span>더보기</span></button>
+            </section>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+</body>
+</html>

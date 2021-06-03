@@ -1,0 +1,35 @@
+<ul class="my-matching-lists">
+    @@for(var i=0; i < list; i++){
+    <li>
+        <div class="inner">
+            <span class="num">2020-09-29 (주문번호 16100001000)</span>
+            <div class="info">
+                @@if(context.type1){
+                <span class="state"><span class="blind">주문상태</span>매칭확정</span>
+                <p class="date">확정일 : 2020-06-11 11:00</p>
+                }
+                @@if(context.type2){
+                <span class="state"><span class="blind">주문상태</span>매칭대기중</span>
+                <p class="date">요청일 : 2020-06-11 11:00</p>
+                }
+                <div class="matchings">
+                    <span class="blind">팀매칭 정보</span>
+                    <p class="tit">제주골프장 2인</p>
+                    <p class="price">55,000원</p>
+                </div>
+                @@if(context.type1){
+                <button type="button" class="btn btn-border-basic btn-sm rounded"><span>매칭취소</span></button>
+                }
+                @@if(context.type2){
+                <button type="button" class="btn btn-border-basic btn-sm rounded"><span>요청취소</span></button>
+                }
+            </div>
+        </div>
+    </li>
+    }
+    <!-- nodata -->
+    <li>
+        <p class="nodata">내역이 없습니다.</p>
+    </li>
+    <!-- // nodata -->
+</ul>

@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+// breakpoint
+@mixin pc {
+    @media screen and (min-width: 1025px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media screen and (max-width: 1024px) {
+        @content;
+    }
+}
+@mixin exmob {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media screen and (max-width: 767px) {
+        @content;
+    }
+}
+@mixin mob {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+// font
+@mixin font-sm {
+    font-size:12px;
+    line-height:20px;
+}
+@mixin font {
+    font-size:14px;
+    line-height:22px;
+}
+@mixin font-md {
+    font-size:15px;
+    line-height:24px;
+}
+@mixin font-lg {
+    font-size:17px;
+    line-height:25px;
+    letter-spacing:-0.5px;
+}
+@mixin font-title {
+    font-size:18px;
+    line-height:24px;
+    font-weight:500;
+    letter-spacing:-0.5px;
+}
+@mixin font-giant {
+    font-size:40px;
+    line-height:1;
+}
+@mixin skew {
+    transform: skew(-0.05deg);
+}
+
+// font family
+@mixin font-noto {
+    font-family: "Noto Sans KR" !important;
+}
+@mixin font-pen {
+    font-family: "Nanum Pen Script" !important;
+}
+
+// text ellipsis
+@mixin textEllipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: keep-all;
+    overflow: hidden;
+}
+@mixin textEllipsisClamp($line-clamp) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $line-clamp;
+    -webkit-box-orient: vertical;
+}
+
+// clearfix
+@mixin clearfix {
+    &::after {
+        content: " ";
+        display: block;
+        clear: both;
+    }
+}
+
+// percent calc
+@mixin calcs($property, $size, $wrap) {
+    #{$property}: (($size * 100%) / $wrap);
+}
+
+// max-width 공통화
+@mixin contArea {
+    max-width:768px;
+    margin:0 auto;
+    padding:0 16px;
+}

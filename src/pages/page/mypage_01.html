@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            sub : true,
+            title : '내정보 수정',
+            subtab : 'my',
+            page : 'my01'
+        })
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="container">
+            <section class="sect">
+                <div class="my-profile">
+                    <button type="button" class="my-photo" aria-label="프로필 사진 변경">
+                        <span class="area" style="background-image:url('/images/@noimg.png')"></span><!-- 프로필 사진 미 등록시 @noimg.png 노출 -->
+                    </button>
+                    <button type="button" class="btn btn-border-point btn-sm round"><span>프로필 편집</span></button>
+                </div>
+            </section>
+            <section class="sect border-top">
+                <h2 class="h2-title">기본정보</h2>
+                <form action="">
+                    <div class="form-wrap type2">
+                        <div class="row">
+                            <p class="label">이름</p>
+                            <div class="forms">
+                                <input type="text" class="form-control" placeholder="이름 입력" value="홍길동" aria-label="이름 입력">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label">닉네임</p>
+                            <div class="forms">
+                                <input type="text" class="form-control" placeholder="닉네임 입력" value="신나요" aria-label="닉네임 입력">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label">휴대폰번호</p>
+                            <div class="forms">
+                                <select class="type2" data-toggle="modal-select" data-dim="true" aria-label="통신사 선택">
+                                    <option value="" data-type="placeholder" selected disabled>통신사 선택</option>
+                                    <option value="">SKT</option>
+                                    <option value="">LG U+</option>
+                                    <option value="">KT</option>
+                                </select>
+                                <input type="text" class="form-control" placeholder="'-'를 제외한 11자리 숫자 입력" aria-label="'-'제외 핸드폰번호 11자리 숫자 입력">
+                            </div>
+                            <div class="forms">
+                                <button type="button" class="btn btn-border-basic"><span>재인증하기</span></button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label">이메일</p>
+                            <div class="forms">
+                                <input type="text" class="form-control" placeholder="이메일 입력" aria-label="이메일 입력">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label">생년월일</p>
+                            <div class="forms">
+                                <input type="text" class="form-control" placeholder="예) 19900101" value="19901205" aria-label="생년월일 숫자만 8자리 입력">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label">성별</p>
+                            <div class="forms">
+                                @@include('./modules/slt-list.html', {
+                                    size : 'size2',
+                                    rdobtn : 'gender',
+                                    slt : [
+                                        '남자', '여자'
+                                    ]
+                                })
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section class="sect border-top">
+                <h2 class="h2-title">마이골프스타일(선택)</h2>
+                <form action="">
+                    <div class="form-wrap">
+                        <div class="row">
+                            <p class="label">구력</p>
+                            <div class="forms">
+                                <select data-toggle="modal-select" data-dim="true" aria-label="구력 선택">
+                                    <option value="" data-type="placeholder" selected disabled>구력 선택</option>
+                                    <option value="op1-1">6개월 이하</option>
+                                    <option value="op1-2">1~2년</option>
+                                    <option value="op1-3">2~3년</option>
+                                    <option value="op1-4">3~5년</option>
+                                    <option value="op1-5">5~10년</option>
+                                    <option value="op1-6">10~15년</option>
+                                    <option value="op1-7">15~20년</option>
+                                    <option value="op1-8">20~30년</option>
+                                    <option value="op1-9">30년 이상</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label">핸디캡</p>
+                            <div class="forms">
+                                <select data-toggle="modal-select" data-dim="true" aria-label="핸디캡 선택">
+                                    <option value="">0</option>
+                                    <option value="">30</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label">라운드 스타일</p>
+                            <div class="forms">
+                                <select data-toggle="modal-select" data-dim="true" aria-label="라운드스타일 선택">
+                                    <option value="" data-type="placeholder" selected disabled>스타일 선택</option>
+                                    <option value="">명랑골프</option>
+                                    <option value="">프로골프</option>
+                                    <option value="">초보골프</option>
+                                    <option value="">친목골프</option>
+                                    <option value="">무관</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label">선호하는 시간대</p>
+                            <div class="forms">
+                                <select data-toggle="modal-select" data-dim="true" aria-label="선호하는 시간대 선택">
+                                    <option value="" data-type="placeholder" selected disabled>시간대 선택</option>
+                                    <option value="">새벽(5시~7시)</option>
+                                    <option value="">오전(8시~9시)</option>
+                                    <option value="">오후A(11시~12시)</option>
+                                    <option value="">오후B(13시~14시)</option>
+                                    <option value="">야간(15시이후~)</option>
+                                    <option value="">무관</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label">선호하는 팀매칭</p>
+                            <div class="forms">
+                                <select data-toggle="modal-select" data-dim="true" aria-label="선호하는 팀매칭 선택">
+                                    <option value="" data-type="placeholder" selected disabled>팀매칭 선택</option>
+                                    <option value="">싱글팀</option>
+                                    <option value="">보기팀</option>
+                                    <option value="">더블팀</option>
+                                    <option value="">초보팀</option>
+                                    <option value="">무관</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label">선호하는 골프장</p>
+                            <div class="forms">
+                                <select data-toggle="modal-select" data-dim="true" aria-label="선호하는 골프장 선택">
+                                    <option value="" data-type="placeholder" selected disabled>골프장 선택</option>
+                                    <option value="">산악형</option>
+                                    <option value="">평지형</option>
+                                    <option value="">상관없음</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label">라운드 횟수(월간 기준)</p>
+                            <div class="forms">
+                                <select data-toggle="modal-select" data-dim="true" aria-label="">
+                                    <option value="" data-type="placeholder" selected disabled>라운드 횟수 선택</option>
+                                    <option value="">1회</option>
+                                    <option value="">2~3회</option>
+                                    <option value="">4~5회</option>
+                                    <option value="">5~10회</option>
+                                    <option value="">10회 이상</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="btn-submit">
+                            <button type="button" class="btn btn-border-basic btn-lg"><span>취소</span></button>
+                            <button type="button" class="btn btn-point btn-lg"><span>변경 완료</span></button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+</body>
+</html>

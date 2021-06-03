@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            sub : true,
+            title : '나의 알림',
+            subtab : 'my',
+            page : 'my07'
+        })
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="container">
+            <section class="sect">
+                @@include('./modules/board-list.html', {
+                    alert: true,
+                    page : 'mypage_07_view'
+                })
+                @@include('./modules/pagination.html')
+            </section>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+</body>
+</html>

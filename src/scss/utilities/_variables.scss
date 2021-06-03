@@ -1,0 +1,103 @@
+// colors
+$black :        #000 !default;
+$basic :        #333 !default;
+$cont :         #666 !default;
+$gray :         #888 !default;
+$placeholder :  #999 !default;
+$border :       #ddd !default;
+$point :        #ee3d43 !default;
+$point2 :       #bd2025 !default;
+$blur :         #eee !default;
+$white :        #fff !default;
+$disabled :     #f8f8f8 !default;
+$red :          #a02013 !default;
+$blue :         #2420bd !default;
+
+$colors : (
+    "black" $black "dark",
+    "basic" $basic "dark",
+    "cont" $cont "dark",
+    "gray" $gray "bright",
+    "border" $border "bright",
+    "point" $point "dark", 
+    "point2" $point2 "dark", 
+    "blur" $blur "bright",
+    "white" $white "bright",
+    "red" $red "dark",
+    "blue" $blue "dark"
+) !default;
+$color-maps : (
+    "black" :   $black,
+    "basic" :   $basic,
+    "cont" :    $cont,
+    "gray" :    $gray,
+    "border" :  $border,
+    "point" :   $point,
+    "point2" :  $point2,
+    "blur" :    $blur,
+    "white" :   $white,
+    "red" :     $red,
+    "blue" :    $blue,
+) !default;
+
+$min-contrast-ratio : 4.5 !default;
+
+// transition time
+$time : 0.2s;
+
+// font
+$font-family-square :       "NanumSquare", "noto sans KR", sans-serif !default;
+$font-family-notosans :     "noto sans KR", sans-serif !default;
+$font-family-mobile :       -apple-system, BlinkMacSystemFont, "noto sans KR", Roboto, Arial, sans-serif !default;
+
+$font-size-base :       16px !default;
+$font-size-sm-base :    $font-size-base - 2 !default;
+$font-size-lg-base :    $font-size-base + 2 !default;
+
+$line-height-base :     24px !default;
+$line-height-sm-base :  $line-height-base - 2 !default;
+$line-height-lg-base :  $line-height-base + 4 !default;
+
+// body
+$body-bg :              $white !default;
+$body-font-color :      $basic !default;
+
+$btn-transition : color $time ease-in-out, background-color $time ease-in-out, border-color $time ease-in-out !default;
+$input-transition : border-color $time ease-in-out !default;
+
+$btn-sizes : (
+    "sm" 14px 28px 16px 14px,
+    "lg" 17px 48px 16px 36px,
+) !default;
+
+// border
+$border-radius :        4px !default;
+$border-radius-sm :     2px !default;
+$border-radius-lg :     8px !default;
+
+$border-width :         1px !default;
+$border-widths : (
+    1: 1px,
+    2: 2px,
+    3: 3px,
+    4: 4px,
+    5: 5px
+) !default;
+
+//spacing
+$spacers : (
+    0:  0,
+    5:  5px,
+    10: 10px,
+    15: 15px,
+    20: 20px,
+    25: 25px,
+    30: 30px,
+    40: 40px,
+    50: 50px,
+    60: 60px
+) !default;
+
+// shadow
+$boxshadow : 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+$textshadow : 3px 4px 5px rgba($black, 0.3);

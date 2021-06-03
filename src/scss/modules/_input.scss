@@ -1,0 +1,345 @@
+/* input */
+.form-control {
+    display:block;
+    width:100%;
+    min-height:40px;
+    height:40px;
+    padding:7px 10px;
+    border:1px solid $border;
+    border-radius:0;
+    background:transparent;
+    font-size:14px;
+    line-height:normal;
+    transition:border 0.2s ease-in-out;
+    &:focus {
+        outline: 0;
+        border-color:$point;
+    }
+    &::placeholder,
+    &::-webkit-input-placeholder {
+        color:$placeholder;
+        opacity:1;
+    }
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    &:disabled {
+        background:$disabled;
+        color:$placeholder;
+    }
+    &:read-only {
+        color:$placeholder;
+    }
+    &.rounded {
+        border-radius:$border-radius-lg;
+    }
+    &.large {
+        height:50px;
+        padding:12px 15px;
+        border-radius:$border-radius-lg;
+        font-size:15px;
+    }
+}
+textarea.form-control {
+    resize:none;
+    max-width:100%;
+    height:125px;
+}
+
+/* checkbox, radio */
+.like-chk-wrap {
+    display:inline-block;
+    position:relative;
+    vertical-align:top;
+    input {
+        position:absolute;
+        width:1px;
+        height:1px;
+        padding:0;
+        margin:-1px;
+        overflow:hidden;
+        clip:rect(0, 0, 0, 0);
+        border:0;
+        & + label {
+            display:block;
+            width:30px;
+            height:30px;
+            padding-top:30px;
+            cursor:pointer;
+            font-size:0;
+            overflow:hidden;
+            background:url('/images/bg/bg-heart-off.png') center no-repeat;
+            background-size:16px auto;
+        }
+        &:checked + label {
+            background-image:url('/images/bg/bg-heart-on.png');
+        }
+    }
+}
+$types : chk, rdo, rdo-btn, chk-btn;
+@each $type in $types {
+    .#{$type}-wrap {
+        display:inline-block;
+        position:relative;
+        min-height:22px;
+        vertical-align:top;
+        @if $type == 'rdo-btn' {
+            display:block;
+            min-height:40px;
+        }
+        input {
+            position:absolute;
+            width:1px;
+            height:1px;
+            padding:0;
+            margin:-1px;
+            overflow:hidden;
+            clip:rect(0, 0, 0, 0);
+            border:0;
+            + label {
+                display:inline-block;
+                position:relative;
+                cursor:pointer;
+                padding-left:26px;
+                color:$cont;
+                font-size:14px;
+                line-height:22px;
+                user-select:none;
+                vertical-align:top;
+                @if $type == 'rdo-btn' {
+                    display:block;
+                    height:40px;
+                    padding:0 10px;
+                    text-align:center;
+                    border:1px solid $border;
+                    color:$gray;
+                    line-height:38px;
+                }
+                @if $type == 'chk-btn' {
+                    display:block;
+                    height:38px;
+                    padding-left:35px;
+                    color:$cont;
+                    line-height:38px;
+                    &::before {
+                        content:' ';
+                        position:absolute;
+                        top:9px;
+                        left:0;
+                        width:20px;
+                        height:20px;
+                        background:url('/images/bg/bg-check.png') 0 0 no-repeat;
+                        background-size:20px auto;
+                    }
+                }
+                @if $type == 'chk' {
+                    &::before {
+                        content:' ';
+                        position:absolute;
+                        top:2px;
+                        left:0;
+                        width:18px;
+                        height:18px;
+                        border:1px solid $border;
+                        background:#fff;
+                    }
+                }
+                @if $type == 'rdo' {
+                    &::before {
+                        content:' ';
+                        position:absolute;
+                        top:2px;
+                        left:0;
+                        width:18px;
+                        height:18px;
+                        border:1px solid $border;
+                        background:#fff;
+                        border-radius:9px;
+                    }
+                }
+            }
+            &:disabled + label {
+                color:$gray;
+                &::before {
+                    background:$disabled;
+                }
+            }
+            &:checked + label {
+                color:$basic;
+            }
+            @if $type == 'chk' {
+                &:checked + label {
+                    &::before {
+                        border-color:$point;
+                        background-color:$point;
+                    }
+                    &::after {
+                        content:' ';
+                        position:absolute;
+                        top:3px;
+                        left:5px;
+                        width:8px;
+                        height:12px;
+                        border:2px solid $white;
+                        border-top:none;
+                        border-left:none;
+                        transform:rotate(45deg);
+                    }
+                }
+            }
+            @if $type == 'rdo' {
+                &:checked + label {
+                    &::after {
+                        content:' ';
+                        position:absolute;
+                        top:7px;
+                        left:5px;
+                        width:8px;
+                        height:8px;
+                        border-radius:5px;
+                        background:$point;
+                    }
+                }
+            }
+            @if $type == 'rdo-btn' {
+                &:checked + label {
+                    border-color:$point;
+                    background:$point;
+                    color:$white;
+                    font-weight:500;
+                }
+            }
+            @if $type == 'chk-btn' {
+                &:checked + label {
+                    color:$basic;
+                    font-weight:500;
+                    &::before {
+                        background-position-y:bottom;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* selectbox */
+select.form-select {
+    display:block;
+    width:100%;
+    height:40px;
+    padding:0 21px 0 10px;
+    border:1px solid $border;
+    border-radius:0;
+    background:url('/images/bg/bg-arrow.png') no-repeat;
+    background-position:right 5px center;
+    background-size:12px auto;
+    transition:$input-transition;
+    font-size:14px;
+    &:active,
+    &:focus {
+        outline:0;
+        border-color:$point;
+    }
+    &.large {
+        height:50px;
+        padding:0 26px 0 15px;
+        border-radius:$border-radius-lg;
+        font-size:15px;
+    }
+    &.type2 {
+        padding-top:10px;
+        padding-left:0;
+        padding-bottom:9px;
+        border:none;
+        border-bottom:1px solid $border;
+        background-position-y:17px;
+        &:focus {
+            border-color:$point;
+        }
+    }
+}
+.nice-select {
+    &:focus {
+        outline: 0;
+    }
+    .current {
+        position:relative;
+        display:block;
+        width:100%;
+        height:40px;
+        padding:9px 10px;
+        padding-right:20px;
+        border:1px solid $border;
+        background:url('/images/bg/bg-arrow.png') right 5px center;
+        background-size:12px;
+        background-repeat:no-repeat;
+        color:$basic;
+        font-size:14px;
+        line-height:20px;
+        @include textEllipsis;
+        user-select:none;
+        &.placeholder {
+            color:$placeholder;
+        }
+    }
+    &.main {
+        .current {
+            border-radius:$border-radius-lg;
+            color:$cont;
+            font-size:15px;
+            background-image:none;
+        }
+    }
+    &.large {
+        .current {
+            height:50px;
+            border-radius:$border-radius-lg;
+            padding:14px 15px;
+            padding-right:20px;
+            font-size:15px;
+        }
+    }
+    &.type2 {
+        .current {
+            padding-top:10px;
+            padding-left:0;
+            padding-bottom:9px;
+            border:none;
+            border-bottom:1px solid $border;
+            background-position-y:17px;
+        }
+    }
+    ul.list {
+        display:none;
+        position:fixed;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+        width:calc(100% - 32px);
+        max-width:768px - 32px;
+        max-height:310px;
+        background:$white;
+        border:1px solid $border;
+        border-radius:$border-radius-lg;
+        overflow-y:auto;
+        z-index:1010;
+        li {
+            padding:10px 12px;
+            border-top:1px solid $border;
+            color:$cont;
+            font-size:14px;
+            line-height:20px;
+            text-align:center;
+            user-select:none;
+            word-break:keep-all;
+            &:first-child {
+                border-top:none;
+            }
+            &.selected {
+                background:$point;
+                color:$white;
+            }
+        }
+    }
+}

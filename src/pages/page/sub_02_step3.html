@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            sub : true,
+            title : '팀매칭 접수하기',
+        })
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="container no-depth">
+            <section class="sect">
+                <h2 class="h2-title">원하시는 매칭 유형을<br>선택해 주세요!</h2>
+                <form action="">
+                    <div class="form-wrap">
+                        <div class="row">
+                            <p class="label type2">핸디캡</p>
+                            <div class="forms">
+                                @@include('./modules/slt-list.html', {
+                                    size : 'size3',
+                                    rdo : 'handicap',
+                                    slt : [
+                                        '싱글팀', '보기팀', '더블팀', '초보팀', '무관'
+                                    ]
+                                })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label type2">골프장 컨디션</p>
+                            <div class="forms">
+                                @@include('./modules/slt-list.html', {
+                                    rdo : 'condition',
+                                    slt : [
+                                        '중급', '중상급', '고급', '무관'
+                                    ]
+                                })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label type2">라운드스타일</p>
+                            <div class="forms">
+                                @@include('./modules/slt-list.html', {
+                                    size : 'size3',
+                                    rdo : 'style',
+                                    slt : [
+                                        '명랑골프', '친목골프', '프로골프', '초보골프', '무관'
+                                    ]
+                                })
+                            </div>
+                        </div>
+                        <div class="btn-submit">
+                            <button type="button" class="btn btn-lg btn-border-basic" onclick="location.href='/page/sub_02_step2.html'"><span>이전단계</span></button>
+                            <button type="button" class="btn btn-lg btn-point" onclick="location.href='/page/sub_02_step4.html'"><span>다음단계</span></button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+</body>
+</html>

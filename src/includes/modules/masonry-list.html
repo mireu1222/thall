@@ -1,0 +1,26 @@
+<div class="items">
+    @@if(!context.videoType) {
+        @@if(context.thumbType) {
+        <a href="@@link" class="thumb" title="상세보기로 이동"><img src="/images/img/img-sub0101-2.jpg" alt=""></a>
+        }
+        <div class="info">
+            <a href="@@link" class="tit" title="상세보기로 이동"><span class="blind">제목</span>제목이 들어감</a>
+            @@if(context.thumbType){
+            <p class="desc"><span class="blind">내용</span>내용이 들어감. 썸네일 이미지 + 제목 + 내용 + 날짜 타입</p>
+            }
+            @@if(!context.thumbType){
+            <p class="desc"><span class="blind">내용</span>내용이 들어감. 썸네일X + 제목 + 내용 + 날짜 타입</p>    
+            }
+            <p class="date"><span class="blind">등록일</span>2021-03-19</p>
+        </div>
+    }
+    @@if(context.videoType) {
+        <a href="#video" class="thumb" data-control="modal"><img src="/images/img/img-sub0101-1.jpg" alt=""></a>
+        <div class="info">
+            <p class="src" aria-hidden="true">@@video</p><!-- video 주소 -->
+            <a href="#video" class="tit" data-control="modal"><span class="blind">제목</span>동영상 제목이 들어감</a>
+            <p class="desc"><span class="blind">내용</span>동영상 내용이 들어감. 동영상 썸네일 + 제목 + 내용 + 날짜 타입. 클릭 시 modal 뜸.</p>
+            <p class="date"><span class="blind">등록일</span>2021-03-19</p>
+        </div>
+    }
+</div>

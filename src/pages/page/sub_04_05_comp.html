@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            sub : true,
+            title : '온라인 1:1 문의',
+        })
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="container no-depth">
+            <section class="sect">
+                <div class="complete-msg">
+                    <p class="tit">온라인 1:1 문의 완료</p>
+                    <p class="text">문의 접수가 성공적으로 접수 되었습니다.<br>감사합니다.</p>
+                    <a href="/" class="btn btn-point btn-lg rounded full"><span>홈으로 가기</span></a>
+                </div>
+            </section>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+</body>
+</html>

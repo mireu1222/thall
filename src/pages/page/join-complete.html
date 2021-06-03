@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            sub : true,
+            title : '회원가입',
+        })
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="container no-depth">
+            <section class="sect">
+                <div class="complete-msg">
+                    <p class="tit">티홀 멤버가 되신 것을<br>환영합니다!</p>
+                    <p class="text">이제 티홀의 다양한 서비스를 누리세요.</p>
+                    <a href="/page/login.html" class="btn btn-point btn-lg rounded full"><span>회원가입 완료</span></a>
+                </div>
+            </section>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+</body>
+</html>

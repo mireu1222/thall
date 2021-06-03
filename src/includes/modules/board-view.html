@@ -1,0 +1,83 @@
+<div class="board-view-wrap">
+    <!-- title -->
+    <div class="board-head">
+        <p class="tit"><span class="blind">제목</span>게시물 타이틀 영역입니다.</p>
+        @@if(!context.event){
+            <ul class="info">
+                <li><span class="blind">작성일</span>2021-02-12</li>
+                <li><span class="blind">조회수</span>87</li>
+            </ul>
+        }
+        @@if(context.event){
+            <ul class="info">
+                <li>이벤트기간 2021.05.11 ~ 05.13</li>
+            </ul>
+        }
+    </div>
+    <!-- // title -->
+    <!-- content -->
+    <div class="board-content">
+        @@if(!context.event){
+            <div class="cont">
+                입력한 텍스트 또는 에디터 내용 불러옴
+            </div>
+        }
+        @@if(context.event){
+            <!-- 이벤트 -->
+            <div class="cont event">
+                <span class="evt-img"><img src="/images/@thumb3.jpg" alt=""></span>
+                <p class="title">이벤트 제목이 들어감</p>
+                <p class="desc">이벤트 당첨을 축하드립니다!</p>
+                <ul class="evt-info">
+                    <li>
+                        <dl>
+                            <dt>이벤트 경품</dt>
+                            <dd>경품상품</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>당첨자 발표</dt>
+                            <dd>
+                                홍길동(golf***)<br>
+                                홍길동(golf***)<br>
+                                홍길동(golf***)
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+            <!-- // 이벤트 -->
+        }
+        <!-- 첨부파일 / 없을 경우 DOM 삭제되도록. 빈 DOM 남지않게 해주세요. -->
+        <div class="files">
+            <p class="tit">첨부파일</p>
+            <ul class="file-lists">
+                <li><a href="#n" class="file-down">첨부파일제목.jpg</a></li>
+                <li><a href="#n" class="file-down">첨부파일제목.jpg</a></li>
+                <li><a href="#n" class="file-down">첨부파일제목.jpg</a></li>
+            </ul>
+        </div>
+        <!-- // 첨부파일 -->
+    </div>
+    <!-- // content -->
+    <!-- prev/next -->
+    <div class="board-foot">
+        <!-- 이전글/다음글 다 없을 경우 ul.more-view DOM 삭제 -->
+        <ul class="more-view">
+            <!-- 이전글 없을 경우 li.prev DOM 삭제 -->
+            <li class="prev">
+                <a href="">이전글</a>
+            </li>
+            <!-- // 이전글 없을 경우 li.prev DOM 삭제 -->
+            <!-- 다음글 없을 경우 li.next DOM 삭제 -->
+            <li class="next">
+                <a href="">다음글</a>
+            </li>
+            <!-- // 다음글 없을 경우 li.next DOM 삭제 -->
+        </ul>
+        <!-- // 이전글/다음글 다 없을 경우 ul.more-view DOM 삭제 -->
+        <a href="/page/@@page.html" class="btn-list"><span class="bar" aria-hidden="true"></span><span class="blind">목록</span></a>
+    </div>
+    <!-- // prev/next -->
+</div>

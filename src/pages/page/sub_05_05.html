@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            sub : true,
+            title : '주요협력사',
+            subtab : 'sub05',
+            page : 'sub0505'
+        })
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="container">
+            <section class="sect">
+                <ul class="partners-lists">
+                    <li>
+                        <span class="ci"><img src="/images/img/img-ci01.jpg" alt="(사)시니어골프협회 CI"></span>
+                        <p>(사)시니어골프협회</p>
+                    </li>
+                    <li>
+                        <span class="ci"><img src="/images/img/img-ci02.jpg" alt="(주)제주렌탈 CI"></span>
+                        <p>(주)제주렌탈</p>
+                    </li>
+                    <li>
+                        <span class="ci"><img src="/images/img/img-ci03.jpg" alt="(주)여수여행센터 CI"></span>
+                        <p>(주)여수여행센터</p>
+                    </li>
+                    <li>
+                        <span class="ci"><img src="/images/img/img-ci04.jpg" alt="(주)에프티컴퍼니 CI"></span>
+                        <p>(주)에프티컴퍼니</p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+</body>
+</html>

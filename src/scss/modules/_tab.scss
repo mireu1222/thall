@@ -1,0 +1,39 @@
+/* tab */
+.nav-tab-wraps {
+    position:relative;
+    @include contArea;
+    &::before {
+        content:' ';
+        position:absolute;
+        left:0;
+        bottom:0;
+        right:0;
+        height:1px;
+        background:$disabled;
+    }
+    ul.tabs {
+        position:relative;
+        display:flex;
+        li {
+            flex:1;
+            text-align:center;
+            a {
+                display:inline-block;
+                vertical-align:top;
+                height:50px;
+                padding-top:20px;
+                border-bottom:2px solid transparent;
+                color:$gray;
+                font-size:15px;
+                line-height:1;
+                font-weight:500;
+                white-space:nowrap;
+            }
+            &.active a {
+                border-color:$point2;
+                color:$point2;
+                font-weight:700;
+            }
+        }
+    }
+}

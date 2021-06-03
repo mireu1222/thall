@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            sub : true,
+            title : '찜 리스트',
+            subtab : 'my',
+            page : 'my05'
+        })
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="container">
+            <section class="sect">
+                <div class="matching-list-wrap">
+                    <ul class="lists">
+                        @@loop('./modules/matching-list.html', [
+                            {
+                                when : 'D-10',
+                                wait : true,
+                                i : '02',
+                                checked : true
+                            }, {
+                                best : true,
+                                when : 'D-10',
+                                wait : true,
+                                i : '05',
+                                checked : true
+                            }
+                        ])
+                    </ul>
+                    <button type="button" class="btn-moreview"><span>더보기</span></button>
+                </div>
+            </section>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<li>
+    <div class="inner">
+        @@if(context.best){
+            <span class="best">BEST</span>
+        }
+        <div class="matching-tit">
+            <p class="tit"><em>[@@when]</em>5월 15일 10시 00분부터</p>
+            <p class="fee">선입금 <em>100,000원~</em></p>
+        </div>
+        <div class="cont-body">
+            <div class="state">
+                <ul class="members">
+                    <li>
+                        <div class="female"><span class="blind">여성 참가</span></div>
+                    </li>
+                    <li>
+                        <div class="male"><span class="blind">남성 참가</span></div>
+                    </li>
+                    <li>
+                        <div><span class="blind">공석 참가 가능</span></div>
+                    </li>
+                    <li>
+                        <div><span class="blind">공석 참가 가능</span></div>
+                    </li>
+                </ul>
+                <div class="matchings">
+                    @@if(context.ing){
+                    <span class="flag ing">진행</span>
+                    }
+                    @@if(context.wait){
+                    <span class="flag waiting">대기</span>
+                    }
+                    <span class="flag count">@@when</span>
+                </div>
+            </div>
+            <div class="infos">
+                <p class="tit">에리시안제주 커플(2인) 부부대기중</p>
+                <p class="desc">제주 그린CC에서 5월 15일 현재 2인 예약중. 부부커플로 2인 부부 또는 2인 여자 커플 선호</p>
+                <div class="spot">
+                    <span>제주시 동부</span>
+                    <span>제주공항 13km</span>
+                </div>
+                <span class="like-chk-wrap">
+                    <input type="checkbox" id="likeit@@i"@@if(context.checked){ checked}>
+                    <label for="likeit@@i">찜하기</label>
+                </span>
+            </div>
+            <div class="btn-group">
+                <a href="/page/matching.html" class="btn btn-sm btn-point rounded"><span>매칭하기</span></a>
+            </div>
+        </div>
+    </div>
+</li>

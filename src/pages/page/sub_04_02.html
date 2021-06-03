@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            sub : true,
+            title : '뉴스/언론',
+            subtab : 'sub04',
+            page : 'sub0402'
+        })
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="container">
+            <section class="sect">
+                <!-- 검색 -->
+                <div class="search-form">
+                    <form action="">
+                        <div class="search-input">
+                            <input type="text" class="form-control rounded" placeholder="검색어를 입력해주세요." aria-label="검색어 입력">
+                            <button type="button" class="btn-search"><span class="blind">검색</span></button>
+                        </div>
+                    </form>
+                </div>
+                <!-- // 검색 -->
+                <!-- 리스트 -->
+                @@include('./modules/board-list.html', {
+                    page : 'sub_04_02_view'
+                })
+                @@include('./modules/pagination.html')
+                <!-- // 리스트 -->
+            </section>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+</body>
+</html>

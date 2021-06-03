@@ -1,0 +1,26 @@
+<div class="slt-lists@@if(context.size){ @@size}">
+    <ul>
+        @@for (var i = 0; i < slt.length; i++) {
+        <li>
+            @@if (context.rdo) {
+            <span class="rdo-wrap">
+                <input type="radio" id="@@rdo-`+[i]+`" name="@@rdo">
+                <label for="@@rdo-`+[i]+`">`+slt[i]+`</label>
+            </span>
+            }
+            @@if (context.rdobtn) {
+            <span class="rdo-btn-wrap">
+                <input type="radio" id="@@rdobtn-`+[i]+`" name="@@rdobtn">
+                <label for="@@rdobtn-`+[i]+`">`+slt[i]+`</label>
+            </span>
+            }
+            @@if (context.chk) {
+            <span class="chk-wrap">
+                <input type="checkbox" id="@@chk-`+[i]+`" name="@@chk">
+                <label for="@@chk-`+[i]+`">`+slt[i]+`</label>
+            </span>
+            }
+        </li>
+        }
+    </ul>
+</div>

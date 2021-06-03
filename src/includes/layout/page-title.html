@@ -1,0 +1,93 @@
+<!-- page category title -->
+<div class="page-title">
+    @@if(context.cate01){<h2 class="title">회사소개</h2>}
+    @@if(context.cate02){<h2 class="title">제품구매</h2>}
+    @@if(context.cate03){<h2 class="title">커피공장카페</h2>}
+    @@if(context.cate04){<h2 class="title">제이콥스스테이션</h2>}
+    @@if(context.cate05){<h2 class="title">사업자구매</h2>}
+    @@if(context.cate06){<h2 class="title">홍보센터</h2>}
+    @@if(context.cate07){<h2 class="title">고객센터</h2>}
+</div>
+<!-- // page category title -->
+@@if(!context.notab){
+<!-- sub depth -->
+<div class="sub-depth-wrap">
+    <div class="scroll">
+        @@if(context.cate01){
+        <ul class="tabs">
+            <li@@if(context.sub0101){ class="active"}><a href="/page/sub_01_01.html">회사개요</a></li>
+            <li@@if(context.sub0102){ class="active"}><a href="/page/sub_01_02.html">인사말</a></li>
+            <li@@if(context.sub0103){ class="active"}><a href="/page/sub_01_03.html">경영이념</a></li>
+            <li@@if(context.sub0104){ class="active"}><a href="/page/sub_01_04.html">회사연혁</a></li>
+            <li@@if(context.sub0105){ class="active"}><a href="/page/sub_01_05.html">CI/BI</a></li>
+            <li@@if(context.sub0106){ class="active"}><a href="/page/sub_01_06.html">대외사업</a></li>
+            <li@@if(context.sub0107){ class="active"}><a href="/page/sub_01_07.html">찾아오시는 길</a></li>
+        </ul>
+        }
+        @@if(context.cate02){
+        <ul class="tabs">
+            <li@@if(context.sub0201){ class="active"}><a href="/page/sub_02_01.html">싱글오리진</a></li>
+            <li@@if(context.sub0202){ class="active"}><a href="/page/sub_02_02.html">프리미엄플랜딩</a></li>
+            <li@@if(context.sub0203){ class="active"}><a href="/page/sub_02_03.html">스페셜블랜딩</a></li>
+            <li@@if(context.sub0204){ class="active"}><a href="/page/sub_02_04.html">에티오피아 특가존(분쇄)</a></li>
+            <li@@if(context.sub0205){ class="active"}><a href="/page/sub_02_05.html">드립백</a></li>
+            <li@@if(context.sub0206){ class="active"}><a href="/page/sub_02_06.html">선물세트</a></li>
+        </ul>
+        }
+        @@if(context.cate03){
+        <ul class="tabs">
+            <li@@if(context.sub0301){ class="active"}><a href="/page/sub_03_01.html">커피공장카페 소개</a></li>
+            <li@@if(context.sub0302){ class="active"}><a href="/page/sub_03_02.html">커피공장카페 갤러리</a></li>
+        </ul>
+        }
+        @@if(context.cate04){
+        <ul class="tabs">
+            <li@@if(context.sub0401){ class="active"}><a href="/page/sub_04_01.html">제이콥스스테이션 소개</a></li>
+            <li@@if(context.sub0402){ class="active"}><a href="/page/sub_04_02.html">제이콥스스테이션 갤러리</a></li>
+        </ul>
+        }
+        @@if(context.cate05){
+        <ul class="tabs">
+            <li@@if(context.sub0501){ class="active"}><a href="/page/sub_05_01.html">사업자구매안내</a></li>
+            <li@@if(context.sub0502){ class="active"}><a href="/page/sub_05_02.html">사업자회원신청</a></li>
+        </ul>
+        }
+        @@if(context.cate06){
+        <ul class="tabs">
+            <li@@if(context.sub0601){ class="active"}><a href="/page/sub_06_01.html">홍보자료</a></li>
+            <li@@if(context.sub0602){ class="active"}><a href="/page/sub_06_02.html">뉴스/언론</a></li>
+            <li@@if(context.sub0603){ class="active"}><a href="/page/sub_06_03.html">홍보갤러리</a></li>
+            <li@@if(context.sub0604){ class="active"}><a href="/page/sub_06_04.html">동영상갤러리</a></li>
+        </ul>
+        }
+        @@if(context.cate07){
+        <ul class="tabs">
+            <li@@if(context.sub0701){ class="active"}><a href="/page/sub_07_01.html">공지사항</a></li>
+            <li@@if(context.sub0702){ class="active"}><a href="/page/sub_07_02.html">자주찾는질문</a></li>
+            <li@@if(context.sub0703){ class="active"}><a href="/page/sub_07_03.html">1:1문의</a></li>
+        </ul>
+        }
+    </div>
+</div>
+<!-- // sub depth -->
+}
+<!-- breadcrumb -->
+<nav class="breadcrumb">
+    <ol>
+        <li>HOME</li>
+        @@if(context.cate01){<li>회사소개</li>}
+        @@if(context.cate02){<li>제품구매</li>}
+        @@if(context.cate03){<li>커피공장카페</li>}
+        @@if(context.cate04){<li>제이콥스스테이션</li>}
+        @@if(context.cate05){<li>사업자구매</li>}
+        @@if(context.cate06){<li>홍보센터</li>}
+        @@if(context.cate07){<li>고객센터</li>}
+        <li class="now">@@title</li>
+    </ol>
+</nav>
+<!-- // breadcrumb -->
+@@if(!context.noTitle){
+<!-- page title -->
+<h3 class="sub-page-title@@if(context.cate02){ type2}">@@title</h3>
+<!-- // page title -->
+}

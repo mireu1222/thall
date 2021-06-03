@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            sub : true,
+            title : '팀매칭 접수 내역',
+            subtab : 'my',
+            page : 'my03'
+        })
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="container">
+            <section class="sect">
+                <!-- 기간 검색 -->
+                <div class="form-wrap period">
+                    <div class="row">
+                        <div class="forms">
+                            <div class="datepicker-wrap">
+                                <input type="text" class="form-control datepicker" placeholder="날짜 선택" aria-label="검색 시작 날짜 선택">
+                            </div>
+                            <span>~</span>
+                            <div class="datepicker-wrap">
+                                <input type="text" class="form-control datepicker" placeholder="날짜 선택" aria-label="검색 종료 날짜 선택">
+                            </div>
+                            <button type="button" class="btn btn-basic"><span>검색</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 기간 검색 -->
+                @@include('./modules/my-mch-list.html', {
+                    type2 : true,
+                    list : 3
+                })
+            </section>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+</body>
+</html>

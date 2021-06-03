@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            sub : true,
+            title : '팀매칭',
+        })
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="container no-depth">
+            @@include('./layout/page-tab.html', {
+                sub01 : true,
+                page : '0102'
+            })
+            <!-- 검색 -->
+            <section class="sect">
+                <form action="">
+                    <div class="form-wrap">
+                        <div class="row">
+                            <p class="label">라운드 날짜</p>
+                            <div class="forms">
+                                <div class="datepicker-wrap">
+                                    <input type="text" class="form-control datepicker" placeholder="날짜를 선택해 주세요." aria-label="라운드 날짜 선택">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label">라운드 시간</p>
+                            <div class="forms">
+                                <a href="#n" class="option-select-wrap" data-toggle="option-select" data-target="#option01" data-option-value="">
+                                    <span class="option-display">시간을 선택해 주세요.</span>
+                                    <span class="btn btn-point">선택</span>
+                                </a>
+                                <div id="option01" class="option-select-list">
+                                    <ul class="lists">
+                                        <li class="option" data-value="time01">새벽(5시~7시)</li>
+                                        <li class="option" data-value="time02">오전(8시~9시)</li>
+                                        <li class="option" data-value="time03">오후A(11시~12시)</li>
+                                        <li class="option" data-value="time04">오후B(13시~14시)</li>
+                                        <li class="option" data-value="time05">야간(15시이후~)</li>
+                                        <li class="option" data-value="time06">시간무관</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label type2">라운드 인원</p>
+                            <div class="forms">
+                                @@include('./modules/slt-list.html', {
+                                    rdo : 'personnel',
+                                    slt : [
+                                        '1인', '2인', '3인', '커플'
+                                    ]
+                                })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label">라운드 지역</p>
+                            <div class="forms">
+                                <select data-toggle="modal-select" data-dim="true" aria-label="라운드 지역 선택">
+                                    <option value="" data-type="placeholder" selected disabled>지역 선택</option>
+                                    <option value="spot01">제주시</option>
+                                    <option value="spot02">서귀포시</option>
+                                    <option value="spot03">제주서부</option>
+                                    <option value="spot04">제주동부</option>
+                                    <option value="spot05">무관</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label type2">라운드 상태</p>
+                            <div class="forms">
+                                @@include('./modules/slt-list.html', {
+                                    size : 'size3',
+                                    rdo : 'matching-state',
+                                    slt : [
+                                        '전체', '진행중', '대기중'
+                                    ]
+                                })
+                            </div>
+                        </div>
+                        <div class="btn-submit">
+                            <button type="submit" class="btn btn-point btn-lg"><span>검색</span></button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <!-- // 검색 -->
+            <!-- 리스트 -->
+            <section class="sect border-top">
+                <div class="matching-list-wrap">
+                    <div class="filter">
+                        <select class="form-select">
+                            <option value="">날짜순(임박순)</option>
+                        </select>
+                        <select class="form-select">
+                            <option value="">인기순</option>
+                        </select>
+                    </div>
+                    <ul class="lists">
+                        @@loop('./modules/matching-list.html', [
+                            {
+                                best : true,
+                                when : '긴급',
+                                ing : true,
+                                i : '01',
+                            }, {
+                                best : true,
+                                when : 'D-10',
+                                wait : true,
+                                i : '02',
+                                checked : true
+                            }, {
+                                best : true,
+                                when : '긴급',
+                                ing : true,
+                                i : '03'
+                            }, {
+                                best : true,
+                                when : 'D-10',
+                                wait : true,
+                                i : '04'
+                            }, {
+                                best : true,
+                                when : 'D-10',
+                                wait : true,
+                                i : '05',
+                                checked : true
+                            }
+                        ])
+                    </ul>
+                    <button type="button" class="btn-moreview"><span>더보기</span></button>
+                </div>
+            </section>
+            <!-- // 리스트 -->
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+</body>
+</html>

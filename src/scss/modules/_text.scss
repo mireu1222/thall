@@ -1,0 +1,74 @@
+.tit-wrap {
+    margin-bottom:50px;
+    @include mobile {
+        margin-bottom:30px;
+    }
+    .tit {
+        @include font-title;
+        color:$point;
+        font-weight:700;
+        word-break:keep-all;
+    }
+    .desc {
+        @include font-lg;
+        font-weight:700;
+        word-break:keep-all;
+    }
+}
+.txt {
+    @include font;
+    word-break:keep-all;
+    @each $color, $value, $ratio in $colors {
+        &.txt-#{$color} {
+            color:$value;
+        }
+    }
+    &.medium {
+        font-weight:500;
+    }
+    &.bold {
+        font-weight:700;
+    }
+    &.ex-bold {
+        font-weight:900;
+    }
+}
+.box-text {
+    border:1px solid $border;
+    padding:12px;
+    background:$disabled;
+    @include font-sm;
+    word-break:keep-all;
+}
+
+// error message
+.err-msg {
+    position:relative;
+    margin-top:5px;
+    padding-left:18px;
+    @include font-sm;
+    color:$red;
+    &::before {
+        content:'!';
+        position:absolute;
+        top:3px;
+        left:0;
+        width:14px;
+        height:14px;
+        border-radius:50%;
+        background:$red;
+        font-size:12px;
+        line-height:15px;
+        color:$white;
+        text-align:center;
+        @include mobile {
+            top:4px;
+        }
+    }
+    &:empty {
+        margin-top:0;
+        &::before {
+            display:none;
+        }
+    }
+}

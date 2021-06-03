@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            sub : true,
+            title : '이벤트',
+            subtab : 'sub04',
+            page : 'sub0403'
+        })
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="container">
+            @@include('./layout/page-tab.html', {
+                sub04 : true,
+                page : '040301'
+            })
+            <section class="sect">
+                <div class="evt-lists">
+                    <ul class="lists">
+                        <li>
+                            <a href="/page/sub_04_03_01_view.html" class="link">
+                                <span class="thumb" aria-hidden="true">
+                                    <img src="/images/@thumb3.jpg" alt="">
+                                </span>
+                                <div class="info">
+                                    <span class="flag">이벤트</span>
+                                    <p class="tit">이벤트 제목이 들어감</p>
+                                    <p class="date">2021.05.11 ~ 05.13</p>
+                                </div>
+                                <span class="d-day"><span class="blind">이벤트 종료</span>D-2</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/page/sub_04_03_01_view.html" class="link">
+                                <span class="thumb" aria-hidden="true">
+                                    <img src="/images/@thumb3.jpg" alt="">
+                                </span>
+                                <div class="info">
+                                    <span class="flag">이벤트</span>
+                                    <p class="tit">이벤트 제목이 들어감</p>
+                                    <p class="date">2021.05.11 ~ 05.13</p>
+                                </div>
+                                <span class="d-day"><span class="blind">이벤트 종료</span>D-8</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/page/sub_04_03_01_view.html" class="link">
+                                <span class="thumb" aria-hidden="true">
+                                    <img src="/images/@thumb3.jpg" alt="">
+                                </span>
+                                <div class="info">
+                                    <span class="flag">이벤트</span>
+                                    <p class="tit">이벤트 제목이 들어감</p>
+                                    <p class="date">2021.05.11 ~ 05.13</p>
+                                </div>
+                                <span class="d-day"><span class="blind">이벤트 종료</span>D-99</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/page/sub_04_03_01_view.html" class="link">
+                                <span class="thumb" aria-hidden="true">
+                                    <img src="/images/@thumb3.jpg" alt="">
+                                </span>
+                                <div class="info">
+                                    <span class="flag">이벤트</span>
+                                    <p class="tit">이벤트 제목이 들어감</p>
+                                    <p class="date">2021.05.11 ~ 05.13</p>
+                                </div>
+                                <span class="d-day"><span class="blind">이벤트 종료</span>D-2</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="btn-moreview"><span>더보기</span></button>
+            </section>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+</body>
+</html>

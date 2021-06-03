@@ -1,0 +1,61 @@
+<div class="board-list-wrap">
+    @@if(!context.alert){
+    <ul class="lists">
+        <!-- loop : 공지글+새글 case -->
+        <li>
+            <a href="/page/@@page.html" class="link notice new">
+                <span class="tit">게시글 제목이 들어감 게시글 제목이 들어감 게시글 제목이 들어감 게시글 제목이 들어감 게시글 제목이 들어감</span>
+                <span class="date">2021-01-01</span>
+            </a>
+        </li>
+        <!-- // loop : 공지글+새글 case -->
+        <!-- loop : 공지글 case -->
+        <li>
+            <a href="/page/@@page.html" class="link notice">
+                <span class="tit">게시글 제목이 들어감</span>
+                <span class="date">2021-01-01</span>
+            </a>
+        </li>
+        <!-- // loop : 공지글 case -->
+        <!-- loop : 새글 case -->
+        <li>
+            <a href="/page/@@page.html" class="link new">
+                <span class="tit">게시글 제목이 들어감</span>
+                <span class="date">2021-01-01</span>
+            </a>
+        </li>
+        <!-- // loop : 새글 case -->
+        <!-- loop -->
+        <li>
+            <a href="/page/@@page.html" class="link">
+                <span class="tit">게시글 제목이 들어감</span>
+                <span class="date">2021-01-01</span>
+            </a>
+        </li>
+        <!-- // loop -->
+        <!-- nodata -->
+        <li>
+            <p class="nodata">게시글이 없습니다.</p>
+        </li>
+        <!-- // nodata -->
+    </ul>
+    }
+    @@if(context.alert){
+    <ul class="lists">
+        <li>
+            <a href="/page/@@page.html" class="link alert">
+                <span class="state unread">미열람</span>
+                <span class="tit">게시글 제목이 들어감 게시글 제목이 들어감 게시글 제목이 들어감 게시글 제목이 들어감 게시글 제목이 들어감</span>
+                <span class="date">2021-01-01</span>
+            </a>
+        </li>
+        <li>
+            <a href="/page/@@page.html" class="link alert">
+                <span class="state reading">열람</span>
+                <span class="tit">게시글 제목이 들어감 게시글 제목이 들어감 게시글 제목이 들어감 게시글 제목이 들어감 게시글 제목이 들어감</span>
+                <span class="date">2021-01-01</span>
+            </a>
+        </li>
+    </ul>
+    }
+</div>

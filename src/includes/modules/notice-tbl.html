@@ -1,0 +1,91 @@
+<div class="tbl-wrap notice-tbl">
+    @@if(context.total) {
+    <p class="tbl-count">전체 <em>(6)</em></p>
+    }
+    @@if(context.scroll){
+    <div class="table-responsive">
+    }
+    <table class="table col-tbl">
+        <caption>@@caption</caption>
+        <colgroup>
+            @@if(context.sub0602){
+                <col class="col1">
+                <col>
+                <col class="col2">
+            }
+            @@if(context.notice){
+                <col class="col1">
+                <col>
+                <col class="col2">
+            }
+        </colgroup>
+        @@if(context.sub0602){
+        <thead>
+            <tr>
+                <th scope="col">번호</th>
+                <th scope="col">제목</th>
+                <th scope="col">등록일</th>
+            </tr>
+        </thead>
+        }
+        @@if(context.notice){
+        <thead>
+            <tr>
+                <th scope="col">번호</th>
+                <th scope="col">제목</th>
+                <th scope="col">등록일</th>
+            </tr>
+        </thead>
+        }
+        @@if(context.notice){
+        <tbody>
+            <!-- 공지글 case -->
+            <tr>
+                <td><span class="flag flag-point2">공지</span></td>
+                <td class="align-left">
+                    <a href="/page/@@page.html" class="link-basic">제목이 들어갑니다.</a>
+                </td>
+                <td>2021.01.01</td>
+            </tr>
+            <!-- // 공지글 case -->
+            <!-- 새글 case -->
+            <tr>
+                <td>999</td>
+                <td class="align-left">
+                    <a href="/page/@@page.html" class="link-basic new">제목이 들어갑니다.</a>
+                </td>
+                <td>2021.01.01</td>
+            </tr>
+            <!-- // 새글 case -->
+            <!-- 새글+첨부파일 case -->
+            <tr>
+                <td>999</td>
+                <td class="align-left">
+                    <a href="/page/@@page.html" class="link-basic file new">제목이 들어갑니다.</a>
+                </td>
+                <td>2021.01.01</td>
+            </tr>
+            <!-- // 새글+첨부파일 case -->
+            <!-- 첨부파일 case -->
+            <tr>
+                <td>999</td>
+                <td class="align-left">
+                    <a href="/page/@@page.html" class="link-basic file">제목이 들어갑니다.</a>
+                </td>
+                <td>2021.01.01</td>
+            </tr>
+            <!-- // 첨부파일 case -->
+            <!-- nodata -->
+            <tr>
+                <td colspan="3">
+                    <p class="nodata">게시글이 없습니다.</p>
+                </td>
+            </tr>
+            <!-- // nodata -->
+        </tbody>
+        }
+    </table>
+    @@if(context.scroll){
+    </div>
+    }
+</div>

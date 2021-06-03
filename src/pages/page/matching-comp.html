@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            sub : true,
+            title : '팀매칭 신청하기',
+        })
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="container no-depth">
+            <section class="sect">
+                <!-- 매칭 내용 -->
+                <div class="matching-list-wrap mb-20">
+                    <div class="inner">
+                        <div class="cont-body">
+                            <div class="state">
+                                <ul class="members">
+                                    <li>
+                                        <div class="female"><span class="blind">여성 참가</span></div>
+                                    </li>
+                                    <li>
+                                        <div class="male"><span class="blind">남성 참가</span></div>
+                                    </li>
+                                    <li>
+                                        <div><span class="blind">공석 참가 가능</span></div>
+                                    </li>
+                                    <li>
+                                        <div><span class="blind">공석 참가 가능</span></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="matching-tit">
+                                <p class="tit"><em>[D-10]</em>5월 15일 10시 00분부터</p>
+                                <p class="fee">선입금 <em>100,000원~</em></p>
+                                <div class="spot">
+                                    <span>제주시 동부</span>
+                                    <span>제주공항 13km</span>
+                                </div>
+                            </div>
+                            <div class="infos">
+                                <p class="tit">에리시안제주 커플(2인) 부부대기중</p>
+                                <p class="desc">제주 그린CC에서 5월 15일 현재 2인 예약중. 부부커플로 2인 부부 또는 2인 여자 커플 선호</p>
+                                <span class="like-chk-wrap">
+                                    <input type="checkbox" id="likeit01" checked>
+                                    <label for="likeit01">찜하기</label>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 매칭 내용 -->
+                <!-- 신청 form -->
+                <form action="">
+                    <div class="form-wrap">
+                        <h2 class="h2-title">라운드 희망 요청</h2>
+                        <div class="row">
+                            <p class="label">라운드 날짜</p>
+                            <div class="forms">
+                                <div class="datepicker-wrap">
+                                    <input type="text" class="form-control datepicker" placeholder="날짜를 선택해 주세요." aria-label="라운드 날짜 선택">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label">라운드 시간</p>
+                            <div class="forms">
+                                <a href="#n" class="option-select-wrap" data-toggle="option-select" data-target="#option01" data-option-value="">
+                                    <span class="option-display">시간을 선택해 주세요.</span>
+                                    <span class="btn btn-point">선택</span>
+                                </a>
+                                <div id="option01" class="option-select-list">
+                                    <ul class="lists">
+                                        <li class="option" data-value="time01">새벽(5시~7시)</li>
+                                        <li class="option" data-value="time02">오전(8시~9시)</li>
+                                        <li class="option" data-value="time03">오후A(11시~12시)</li>
+                                        <li class="option" data-value="time04">오후B(13시~14시)</li>
+                                        <li class="option" data-value="time05">야간(15시이후~)</li>
+                                        <li class="option" data-value="time06">시간무관</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label">남기고 싶은 말씀</p>
+                            <div class="forms">
+                                <textarea class="form-control" aria-label="남기고 싶은 말씀"></textarea>
+                            </div>
+                        </div>
+                        <div class="btn-submit">
+                            <button type="button" class="btn btn-point btn-lg"><span>매칭신청 완료</span></button>
+                        </div>
+                    </div>
+                </form>
+                <!-- // 신청 form -->
+            </section>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+</body>
+</html>

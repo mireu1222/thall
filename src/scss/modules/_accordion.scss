@@ -1,0 +1,144 @@
+/* accordion */
+.accordion-wrap {
+    position:relative;
+    &.type2 {
+        ul.lists {
+            > li {
+                .accord-title {
+                    .btn-toggle {
+                        padding-left:38px;
+                        .category {
+                            display:block;
+                            margin-bottom:10px;
+                            color:$cont;
+                            font-size:14px;
+                            line-height:1;
+                            @include textEllipsis;
+                        }
+                        .tit {
+                            @include font;
+                        }
+                        .date {
+                            margin-top:20px;
+                            color:$gray;
+                            font-size:12px;
+                            line-height:1;
+                            @include textEllipsis;
+                        }
+                        .file {
+                            margin-top:25px;
+                            color:$cont;
+                            font-size:11px;
+                            line-height:12px;
+                            &::before {
+                                content:' ';
+                                display:inline-block;
+                                vertical-align:top;
+                                margin-right:4px;
+                                width:13px;
+                                height:12px;
+                                background:url('/images/icon/icon-clip.png') center no-repeat;
+                                background-size:100%;
+                                background-repeat:no-repeat;
+                            }
+                        }
+                        &::before {
+                            content:'Q';
+                            width:18px;
+                            height:18px;
+                            left:10px;
+                            border-radius:$border-radius;
+                            background:$point;
+                            color:$white;
+                            font-size:12px;
+                            text-align:center;
+                            line-height:18px;
+                            font-weight:500;
+                        }
+                        &::after {
+                            top:18px;
+                            margin-top:0;
+                        }
+                    }
+                }
+                .accord-cont {
+                    padding-left:38px;
+                    .date {
+                        margin-top:20px;
+                        color:$gray;
+                        font-size:12px;
+                        line-height:1;
+                        @include textEllipsis;
+                    }
+                    &::before {
+                        content:'A';
+                        position:absolute;
+                        top:27px;
+                        left:10px;
+                        width:18px;
+                        height:18px;
+                        border-radius:$border-radius;
+                        background:$gray;
+                        color:$white;
+                        text-align:center;
+                        font-size:12px;
+                        line-height:18px;
+                        font-weight:500;
+                    }
+                }
+            }
+        }
+    }
+    ul.lists {
+        border-top:1px solid $basic;
+        > li {
+            border-bottom:1px solid $border;
+            .accord-title {
+                display:block;
+                position:relative;
+                .btn-toggle {
+                    display:block;
+                    position:relative;
+                    width:100%;
+                    padding:15px 20px;
+                    text-align:left;
+                    @include font;
+                    word-break:keep-all;
+                    &::before {
+                        content:'Q.';
+                        position:absolute;
+                        top:15px;
+                        left:0px;
+                        @include font;
+                    }
+                    &::after {
+                        content:' ';
+                        position:absolute;
+                        top:50%;
+                        right:5px;
+                        width:12px;
+                        height:7px;
+                        margin-top:-4px;
+                        background:url('/images/bg/bg-arrow-bk.png') center no-repeat;
+                        background-size:12px auto;
+                        transition:all 0.2s ease-out;
+                    }
+                }
+            }
+            &.open {
+                .accord-title .btn-toggle::after {
+                    transform:rotate(180deg);
+                }
+            }
+            .accord-cont {
+                display:none;
+                position:relative;
+                padding:25px 20px;
+                border-top:1px solid $border;
+                background:$disabled;
+                @include font;
+                word-break:keep-all;
+            }
+        }
+    }
+}
